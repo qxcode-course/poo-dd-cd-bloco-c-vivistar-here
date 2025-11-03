@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-03_19-53-35",
+            "content": "class Person:\n    def __init__(self, name: str):\n        self.name = name\n\n\n\n\nclass Market:\n    def __init__(self, counterCount: int, counter: str):\n        self.counterCount = counterCount\n        self.counter = counter\n        \n",
+            "lines": "12"
+        }
+    ]
+}
