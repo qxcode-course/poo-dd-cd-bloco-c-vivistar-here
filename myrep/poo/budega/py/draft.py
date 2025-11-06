@@ -1,4 +1,4 @@
-class Client:
+class Person:
     def __init__(self):
         self.__nome: str | None = None
 
@@ -23,22 +23,66 @@ class Client:
 
 class Market:
     def __init__(self, counterCount: int):
-        self.counters: list[Client | None] = [None] * counterCount
-        self.queue: list[Client] = []
+        self.counters: list[Person | None] = [None] * counterCount
+        self.queue: list[Person] = []
 
-    def validateIndex(self, index: int):
+    def validateIndex(self, index: int) -> bool:
+        return 0 <= index < len(self.counters)
+
+    def toString(self) -> str:
+        counters_str = ", ".join(
+            map(lambda p: str(p.getNome()) if p is not None else "-----", self.counters)
+            )
+        queue_str = ", ".join(
+            map(lambda p: str(p.getNome()) or "-----", self.queue))
+        return f"Caixas: [{counters_str}]\nEspera: [{queue_str}]"
     
-    def Market(self, countCounter: int):
 
-    def toString(self):
-        return f"{self.counters}"
+    def arrive(self, client: Person) -> None:
+        self.queue.append(client)
+        
+    def call(self, index: int) -> None:
+        if len(self.queue) == 0:
+            print("fail: sem clientes")
+            return
+        if self.counters[index] is not None:
+            print("fail: caixa ocupado")
+            return
+        self.counters[index] = self.queue.pop(0)   
+        
+    def finish(self, index: int) -> Person | None:
+        if not self.validateIndex(index):
+            print("fail: indice invalido")  #impedir que o usuário digita um número de caixa inexistente
+            return  
+        if self.counters[index] is None:
+            print("fail: caixa vazio")
+            return None
+        
+        finished_client = self.counters[index]
+        self.counters[index] = None
+        return finished_client
 
-    def arrive(client: Client)
+    def cutInLine(self, sneaky: Person, gullible: str) -> bool:
+        nomes_na_fila = [p.getNome() for p in self.queue]
+        if sneaky.getNome() not in nomes_na_fila:
+            print("fail: não fure fila")
+            return False
         
-    def call()
+        print(f"{sneaky.getNome()} está na posição correta.")
+        return True
+
         
-    def finish()
+    def giveUp(self, quitter: str) -> bool:
+        for person in self.queue:
+            if person.getNome() == quitter:
+                self.queue.remove(person)
+                return True
+            
+        print("fail: pessoa desistiu de ficar na fila")
+        return False
+
+    def main():
         
-    def cutInLine()
-        
-    def giveUp()
+
+
+main()
