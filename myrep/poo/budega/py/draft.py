@@ -34,7 +34,8 @@ class Market:
             map(lambda p: str(p.getNome()) if p is not None else "-----", self.counters)
             )
         queue_str = ", ".join(
-            map(lambda p: str(p.getNome()) or "-----", self.queue))
+            map(lambda p: p.getNome() or "-----", self.queue)
+            )
         return f"Caixas: [{counters_str}]\nEspera: [{queue_str}]"
     
 
