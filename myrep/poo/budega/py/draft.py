@@ -53,7 +53,7 @@ class Market:
     def finish(self, index: int) -> Person | None:
         if not self.validateIndex(index):
             print("fail: indice invalido")  #impedir que o usuário digita um número de caixa inexistente
-            return  
+            return None
         if self.counters[index] is None:
             print("fail: caixa vazio")
             return None
@@ -93,7 +93,7 @@ def main():
             break
 
         elif args[0] == "init":
-            caixas = int(parts[1]) #type: ignore
+            caixas = int(args[1]) #type: ignore
             market = Market(caixas) #type: ignore
 
         elif args[0] == "enter":
