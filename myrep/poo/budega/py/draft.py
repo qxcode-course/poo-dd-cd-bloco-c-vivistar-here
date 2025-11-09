@@ -82,7 +82,7 @@ class Market:
         return False
 
 def main():
-    Market = None
+    market = None
 
     while True:
         line = input()
@@ -100,23 +100,23 @@ def main():
             if market is None:
                 print("fail: mercado não inicializado")
                 continue
-            nome = parts[1]
+            nome = args[1]
             person = Person()
             person.setNome(nome)
             market.arrive(person)
 
         elif args[0] == "call":
-            if marlet is None:
+            if market is None:
                 print("fail: mercado não iniciado")
                 continue
-            index = int(parts[1])
+            index = int(args[1])
             market.call(index)
 
         elif args[0] == "finish":
             if market is None:
                 print("fail: mercado não iniciado")
                 continue
-            index = int(parts[1])
+            index = int(args[1])
             market.finish(index)
 
         elif args[0] == "show":
