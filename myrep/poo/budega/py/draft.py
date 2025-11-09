@@ -37,7 +37,6 @@ class Market:
             map(lambda p: p.getNome() or "-----", self.queue)
             )
         return f"Caixas: [{counters_str}]\nEspera: [{queue_str}]"
-    
 
     def arrive(self, client: Person) -> None:
         self.queue.append(client)
@@ -97,7 +96,7 @@ def main():
             caixas = int(args[1]) #type: ignore
             market = Market(caixas) #type: ignore
 
-        elif args[0] == "enter":
+        elif args[0] == "arrive":
             if market is None:
                 print("fail: mercado não inicializado")
                 continue
