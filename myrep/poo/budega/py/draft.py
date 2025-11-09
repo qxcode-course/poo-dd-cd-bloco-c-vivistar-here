@@ -81,8 +81,48 @@ class Market:
         print("fail: pessoa desistiu de ficar na fila")
         return False
 
-    def main():
-        
+def main():
+    Market = None
 
+    while True:
+        line = input()
+        args = line.split(" ")
+        print (f"${line}")
+
+        if args[0] == "end":
+            break
+
+        elif args[0] == "init":
+            caixas = int(parts[1]) #type: ignore
+            market = Market(caixas) #type: ignore
+
+        elif args[0] == "enter":
+            if market is None:
+                print("fail: mercado não inicializado")
+                continue
+            nome = parts[1]
+            person = Person()
+            person.setNome(nome)
+            market.arrive(person)
+
+        elif args[0] == "call":
+            if marlet is None:
+                print("fail: mercado não iniciado")
+                continue
+            index = int(parts[1])
+            market.call(index)
+
+        elif args[0] == "finish":
+            if market is None:
+                print("fail: mercado não iniciado")
+                continue
+            index = int(parts[1])
+            market.finish(index)
+
+        elif args[0] == "show":
+            if market is not None:
+                 print(market.toString()) #type: ignore
+            else:
+                print("fail: mercado não inicializado")
 
 main()
