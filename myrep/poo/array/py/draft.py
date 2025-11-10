@@ -11,7 +11,6 @@ lista_preenchida: list[int] = [1, 2, 3, 4, 5]
 lista_preenchida_objetos: list[Foo] = [Foo(1), Foo(2), Foo(3), Foo(4), Foo(5)]
 
 lista_vazia.append(1)
-lista_preenchida.append(Foo(6))
 
 lista_numeros: list[int] = [1, 2, 3, 4, 5]
 lista_dobrados: list[int] = [x * 10 for x in lista_numeros]
