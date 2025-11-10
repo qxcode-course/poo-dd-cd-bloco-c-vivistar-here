@@ -1,0 +1,119 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-10_02-39-03",
+            "content": "@@ -1,353 +0,0 @@\n-%0Aclass Foo:%0A    def __init__(self, quantidade: int):%0A        self.quantidade = 0%0A%0A    def __str__(self):%0A        return f'Foo(%7Bself.quantidade%7D)'%0A%0Alista_vazia: list%5Bint%5D = %5B%5D%0Alista_preenchida: list%5Bint%5D = %5B1, 2, 3, 4, 5%5D%0Alista_preencida_objetos: list%5BFoo%5D = %5BFoo(1), Foo(2), Foo(3), Foo(4), Foo(5)%5D%0A%0Alista_vazia.append(1)%0Alista_preenchida.append(Foo(6))\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-10_16-52-34",
+            "content": "@@ -350,24 +350,4 @@\n (6))\n-%0A%0Aprint(lista_vazia)\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-10_16-54-06",
+            "content": "@@ -218,33 +218,32 @@\n  5%5D%0Alista_preenc\n-h\n ida_objetos: lis\n@@ -370,61 +370,4 @@\n zia)\n-%0Aprint(lista_preenchida)%0Aprint(lista_preenchida_objetos)%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2025-11-10_16-54-59",
+            "content": "@@ -353,94 +353,79 @@\n ))%0A%0A\n-lista_numeros: list%5Bint%5D = %5B1, 2, 3, 4, 5%5D%0A%0Alista_numeros.append(6)%0A%0Aprint(lista_numer\n+print(lista_vazia)%0Aprint(lista_preenchida)%0Aprint(lista_preenchida_objet\n os)%0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2025-11-10_16-59-16",
+            "content": "@@ -420,32 +420,8 @@\n d(6)\n-%0Alista_numeros.remove(1)\n %0A%0Apr\n",
+            "lines": "20"
+        },
+        {
+            "label": "2025-11-10_17-05-08",
+            "content": "@@ -444,33 +444,8 @@\n e(1)\n-%0Alista_numeros.reverese()\n %0A%0Apr\n",
+            "lines": "21"
+        },
+        {
+            "label": "2025-11-10_17-05-54",
+            "content": "@@ -460,16 +460,17 @@\n os.rever\n+e\n se()%0A%0Apr\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-10_17-06-00",
+            "content": "@@ -441,16 +441,39 @@\n move(1)%0A\n+lista_numeros.reverse()\n %0A%0Aprint(\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-10_17-06-33",
+            "content": "@@ -1,388 +1,949 @@\n-%0Aclass Foo:%0A    def __init__(self, quantidade: int):%0A        self.quantidade = 0%0A%0A    def __str__(self):%0A        return f'Foo(%7Bself.quantidade%7D)'%0A%0Alista_vazia: list%5Bint%5D = %5B%5D%0Alista_preenchida: list%5Bint%5D = %5B1, 2, 3, 4, 5%5D%0Alista_preenchida_objetos: list%5BFoo%5D = %5BFoo(1), Foo(2), Foo(3), Foo(4), Foo(5)%5D%0A%0Alista_vazia.append(1)%0Alista_preenchida.append(Foo(6))%0A%0Alista_numeros: list%5Bint%5D = %5B\n+@@ -1,9 +1,31 @@%0A-%250A%0A+@@ -1,403 +1,37 @@%250A-%25250A%0A class Fo%0A@@ -26,17 +26,19 @@%0A ass Foo:%0A-%250A%0A+%25250A%0A     def %0A@@ -69,17 +69,19 @@%0A e: int):%0A-%250A%0A+%25250A%0A         %0A@@ -99,18 +99,22 @@%0A dade = 0%0A-%250A%250A%0A+%25250A%25250A%0A     def %0A@@ -127,17 +127,19 @@%0A _(self):%0A-%250A%0A+%25250A%0A         %0A@@ -155,9 +155,11 @@%0A Foo(%0A-%257B%0A+%25257B%0A self%0A@@ -173,13 +173,19 @@%0A dade%0A-%257D)'%250A%250A%0A+%25257D)'%25250A%25250A%0A list%0A@@ -201,19 +201,29 @@%0A list%0A-%255Bint%255D = %255B%255D%250A%0A+%25255Bint%25255D = %25255B%25255D%25250A%0A list%0A@@ -236,33 +236,39 @@%0A nchida: list%0A-%255Bint%255D = %255B%0A+%25255Bint%25255D = %25255B%0A 1, 2, 3, 4, %0A@@ -264,26 +264,30 @@%0A , 2, 3, 4, 5%0A-%255D%250A%0A+%25255D%25250A%0A lista_preenc%0A@@ -308,17 +308,23 @@%0A list%0A-%255BFoo%255D = %255B%0A+%25255BFoo%25255D = %25255B%0A Foo(%0A@@ -357,19 +357,25 @@%0A , Foo(5)%0A-%255D%250A%250A%0A+%25255D%25250A%25250A%0A lista_va%0A@@ -387,17 +387,19 @@%0A ppend(1)%0A-%250A%0A+%25250A%0A lista_pr%0A@@ -421,18 +421,22 @@%0A (Foo(6))%0A-%250A%250A%0A+%25250A%25250A%0A lista_nu%0A@@ -450,92 +450,200 @@%0A list%0A-%255Bint%255D = %255B\n 1, 2\n@@ -951,18 +951,22 @@\n  3, 4, 5\n-%5D%0A\n+%255D%250A\n lista_do\n@@ -981,17 +981,23 @@\n list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n x * \n@@ -1024,78 +1024,463 @@\n eros\n-%5D%0A%0Alista_numeros.append(6)%0Alista_numeros.remove(1)%0A%0A%0Aprint(lista_numeros)\n+%255D%250A%250A%0A+%25255Bint%25255D = %25255B1, 2, 3, 4, 5%25255D%25250A%250A+@@ -395,67 +395,8 @@%25250A , 5%2525255D%25250A-%2525250A%250A list%250A@@ -50,17 +50,23 @@%250A list%250A-%25255Bint%25255D = %25255B%250A+%2525255Bint%2525255D = %2525255B%250A x * %250A@@ -93,78 +93,18 @@%250A eros%250A-%25255D%25250A%25250A%0A list%0A@@ -661,17 +661,19 @@%0A ppend(6)%0A-%250A%0A+%25250A%0A lista_nu%0A@@ -691,11 +691,17 @@%0A e(1)%0A-%250A%250A%250A%0A+%25250A%25250A%25250A%0A prin%0A@@ -717,8 +717,36 @@%0A umeros)%250A%0A++%2525255D%25250A %2525250A%2525250Ali%250A %25250A%250A\n %0A\n",
+            "lines": "87"
+        },
+        {
+            "label": "2025-11-10_17-35-52",
+            "content": "@@ -1,9 +1,31 @@\n-%0A\n+@@ -1,534 +1,34 @@%0A-%250A\n class Fo\n@@ -26,17 +26,19 @@\n ass Foo:\n-%0A\n+%250A\n     def \n@@ -69,17 +69,19 @@\n e: int):\n-%0A\n+%250A\n         \n@@ -99,18 +99,22 @@\n dade = 0\n-%0A%0A\n+%250A%250A\n     def \n@@ -127,17 +127,19 @@\n _(self):\n-%0A\n+%250A\n         \n@@ -155,9 +155,11 @@\n Foo(\n-%7B\n+%257B\n self\n@@ -173,13 +173,19 @@\n dade\n-%7D)'%0A%0A\n+%257D)'%250A%250A\n list\n@@ -201,19 +201,29 @@\n list\n-%5Bint%5D = %5B%5D%0A\n+%255Bint%255D = %255B%255D%250A\n list\n@@ -236,33 +236,39 @@\n nchida: list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n 1, 2, 3, 4, \n@@ -264,26 +264,30 @@\n , 2, 3, 4, 5\n-%5D%0A\n+%255D%250A\n lista_preenc\n@@ -308,17 +308,23 @@\n list\n-%5BFoo%5D = %5B\n+%255BFoo%255D = %255B\n Foo(\n@@ -357,19 +357,25 @@\n , Foo(5)\n-%5D%0A%0A\n+%255D%250A%250A\n lista_va\n@@ -387,17 +387,19 @@\n ppend(1)\n-%0A\n+%250A\n lista_pr\n@@ -421,18 +421,22 @@\n (Foo(6))\n-%0A%0A\n+%250A%250A\n lista_nu\n@@ -446,25 +446,31 @@\n os: list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n 1, 2, 3,\n@@ -474,18 +474,22 @@\n  3, 4, 5\n-%5D%0A\n+%255D%250A\n lista_do\n@@ -504,17 +504,23 @@\n list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n x * \n@@ -547,11 +547,17 @@\n eros\n-%5D%0A%0A\n+%255D%250A%250A\n list\n@@ -575,17 +575,19 @@\n ppend(6)\n-%0A\n+%250A\n lista_nu\n@@ -605,11 +605,17 @@\n e(1)\n-%0A%0A%0A\n+%250A%250A%250A\n prin\n@@ -634,27 +634,93 @@\n ros)\n-%0Aprint(lista_dobrados)\n+%250A%0A+@@ -527,26 +527,4 @@%250A os)%25250A%250A-%0A prin%0A@@ -44,9 +44,12 @@%0A obrados)%0A+%25250A%0A %250A\n %0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2025-11-10_17-36-34",
+            "content": "@@ -425,17 +425,17 @@\n  = %5Bx * \n-4\n+2\n  for x i\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-10_17-36-39",
+            "content": "@@ -429,10 +429,9 @@\n x * \n-10\n+4\n  for\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-10_17-36-52",
+            "content": "@@ -455,63 +455,8 @@\n ros%5D\n-%0Alista_numerosmaiores: list%5Bint%5D = %5B10, 20, 30, 40, 50%5D\n %0A%0Ali\n@@ -550,32 +550,4 @@\n os)%0A\n-print(lista_numerosmaiores)%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-11-10_17-39-18",
+            "content": "@@ -455,11 +455,8 @@\n ros%5D\n- #t\n %0Alis\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-11-10_17-39-29",
+            "content": "@@ -458,18 +458,8 @@\n %5D #t\n-ype ignore\n %0Alis\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-11-10_17-39-30",
+            "content": "@@ -451,16 +451,29 @@\n numeros%5D\n+ #type ignore\n %0Alista_n\n@@ -573,32 +573,8 @@\n (1)%0A\n-lista_numerosmaiores%5B4%5D%0A\n %0A%0Apr\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-11-10_17-40-14",
+            "content": "@@ -1,9 +1,31 @@\n-%0A\n+@@ -1,665 +1,50 @@%0A-%250A\n class Fo\n@@ -26,17 +26,19 @@\n ass Foo:\n-%0A\n+%250A\n     def \n@@ -69,17 +69,19 @@\n e: int):\n-%0A\n+%250A\n         \n@@ -99,18 +99,22 @@\n dade = 0\n-%0A%0A\n+%250A%250A\n     def \n@@ -127,17 +127,19 @@\n _(self):\n-%0A\n+%250A\n         \n@@ -155,9 +155,11 @@\n Foo(\n-%7B\n+%257B\n self\n@@ -173,13 +173,19 @@\n dade\n-%7D)'%0A%0A\n+%257D)'%250A%250A\n list\n@@ -201,19 +201,29 @@\n list\n-%5Bint%5D = %5B%5D%0A\n+%255Bint%255D = %255B%255D%250A\n list\n@@ -236,33 +236,39 @@\n nchida: list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n 1, 2, 3, 4, \n@@ -264,26 +264,30 @@\n , 2, 3, 4, 5\n-%5D%0A\n+%255D%250A\n lista_preenc\n@@ -308,17 +308,23 @@\n list\n-%5BFoo%5D = %5B\n+%255BFoo%255D = %255B\n Foo(\n@@ -357,19 +357,25 @@\n , Foo(5)\n-%5D%0A%0A\n+%255D%250A%250A\n lista_va\n@@ -387,17 +387,19 @@\n ppend(1)\n-%0A\n+%250A\n lista_pr\n@@ -421,18 +421,22 @@\n (Foo(6))\n-%0A%0A\n+%250A%250A\n lista_nu\n@@ -446,25 +446,31 @@\n os: list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n 1, 2, 3,\n@@ -474,18 +474,22 @@\n  3, 4, 5\n-%5D%0A\n+%255D%250A\n lista_do\n@@ -500,25 +500,31 @@\n os: list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n x * 10 f\n@@ -544,18 +544,22 @@\n _numeros\n-%5D%0A\n+%255D%250A\n lista_nu\n@@ -580,17 +580,23 @@\n list\n-%5Bint%5D = %5B\n+%255Bint%255D = %255B\n 10, \n@@ -613,11 +613,17 @@\n , 50\n-%5D%0A%0A\n+%255D%250A%250A\n list\n@@ -641,17 +641,19 @@\n ppend(6)\n-%0A\n+%250A\n lista_nu\n@@ -667,17 +667,19 @@\n emove(1)\n-%0A\n+%250A\n lista_nu\n@@ -694,19 +694,29 @@\n ores\n-%5B4%5D = 99%0A%0A%0A\n+%255B4%255D = 99%250A%250A%250A\n prin\n@@ -731,17 +731,19 @@\n numeros)\n-%0A\n+%250A\n print(li\n@@ -755,17 +755,19 @@\n obrados)\n-%0A\n+%250A\n print(li\n@@ -786,8 +786,80 @@\n aiores)%0A\n++@@ -583,13 +583,8 @@%250A s%25255B4%25255D%250A- = 99%250A %25250A%25250A%25250Ap%0A %250A%0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-10_17-40-16",
+            "content": "@@ -577,17 +577,17 @@\n maiores%5B\n-2\n+4\n %5D = 99%0A%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2025-11-10_17-40-26",
+            "content": "@@ -589,34 +589,8 @@\n  99%0A\n-lista_numerosmaiores%5B:-2%5D%0A\n %0A%0Apr\n",
+            "lines": "27"
+        },
+        {
+            "label": "2025-11-10_17-41-52",
+            "content": "@@ -606,16 +606,17 @@\n maiores%5B\n+:\n -2%5D%0A%0A%0Apr\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-10_17-42-12",
+            "content": "@@ -1,696 +1,65 @@\n-%0Aclass Foo:%0A    def __init__(self, quantidade: int):%0A        self.quantidade = 0%0A%0A    def __str__(self):%0A        return f'Foo(%7Bself.quantidade%7D)'%0A%0Alista_vazia: list%5Bint%5D = %5B%5D%0Alista_preenchida: list%5Bint%5D = %5B1, 2, 3, 4, 5%5D%0Alista_preenchida_objetos: list%5BFoo%5D = %5BFoo(1), Foo(2), Foo\n+@@ -609,21 +609,12 @@%0A ores%0A-.remove\n (3\n-)\n , \n-Foo(4), Foo(5)%5D%0A%0Alista_vazia.append(1)%0Alista_preenchida.append(Foo(6))%0A%0Alista_numeros: list%5Bint%5D = %5B1, 2, 3, 4, 5%5D%0Alista_dobrados: list%5Bint%5D = %5Bx * 10 for x in lista_numeros%5D%0Alista_numerosmaiores: list%5Bint%5D = %5B10, 20, 30, 40, 50%5D%0A%0Alista_numeros.append(6)%0Alista_numeros.remove(1)%0Alista_numerosmaiores%5B2%5D = 99%0Alista_numerosmaiores.remove(3)%0A%0A%0Aprint(lista_numeros)%0Aprint(lista_dobrados)%0Aprint(lista_numerosmaiores)\n+4)%0A+%255B-2%255D%0A %250A%250A%250Ap\n %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2025-11-10_17-42-56",
+            "content": "@@ -1,702 +1,1841 @@\n-%0Aclass Foo:\n+@@ -1,9 +1,31 @@%0A-%250A%0A+@@ -1,702 +1,84 @@%250A-%25250A%0A class Fo%0A@@ -26,17 +26,19 @@%0A ass Foo:%0A-%250A%0A+%25250A\n %0A    \n+ \n def \n-__init__(self, quantidade: int):%0A        self.quantidade = 0%0A%0A    def __str__(self):%0A        return f'Foo(%7Bself.quantidade%7D)'%0A%0Alista_vazia: list%5Bint%5D = %5B%5D%0Alista_preenchida: list%5Bint%5D = %5B1, 2, 3, 4, 5%5D%0Alista_preenchida_objetos: list%5BFoo%5D = %5BFoo(1), Foo(2), Foo(3), Foo(4), Foo(5)%5D%0A%0Alista_vazia.append(1)%0Alista_preenchida.append(Foo(6))%0A%0Alista_numeros: list%5Bint%5D = %5B1, 2, 3, 4, 5%5D%0Alista_dobrados: list%5Bint%5D = %5Bx * 10 for x in lista_numeros%5D%0Alista_numerosmaiores: list%5Bint%5D = %5B10, 20, 30, 40, 50%5D%0A%0Alista_numeros.append(6)%0Alista_numeros.remove(1)%0Alista_numerosmaiores%5B2%5D = 99%0Alista_numerosmaiores.remove(3 and 4)%0A%0A%0Aprint(lista_numeros)%0Aprint(lista_dobrados)%0Aprint(lista_numerosmaiores)\n+%0A@@ -69,17 +69,19 @@%0A e: int):%0A-%250A%0A+%25250A%0A         %0A@@ -99,18 +99,22 @@%0A dade = 0%0A-%250A%250A%0A+%25250A%25250A%0A     def %0A@@ -127,17 +127,19 @@%0A _(self):%0A-%250A%0A+%25250A%0A         %0A@@ -155,9 +155,11 @@%0A Foo(%0A-%257B%0A+%25257B%0A self%0A@@ -173,13 +173,19 @@%0A dade%0A-%257D)'%250A%250A%0A+%25257D)'%25250A%25250A%0A list%0A@@ -201,19 +201,29 @@%0A list%0A-%255Bint%255D = %255B%255D%250A%0A+%25255Bint%25255D = %25255B%25255D%25250A%0A list%0A@@ -236,33 +236,39 @@%0A nchida: list%0A-%255Bint%255D = %255B%0A+%25255Bint%25255D = %25255B%0A 1, 2, 3, 4, %0A@@ -264,26 +264,30 @@%0A , 2, 3, 4, 5%0A-%255D%250A%0A+%25255D%25250A%0A lista_preenc%0A@@ -308,17 +308,23 @@%0A list%0A-%255BFoo%255D = %255B%0A+%25255BFoo%25255D = %25255B%0A Foo(%0A@@ -357,19 +357,25 @@%0A , Foo(5)%0A-%255D%250A%250A%0A+%25255D%25250A%25250A%0A lista_va%0A@@ -387,17 +387,19 @@%0A ppend(1)%0A-%250A%0A+%25250A%0A lista_pr%0A@@ -421,18 +421,22 @@%0A (Foo(6))%0A-%250A%250A%0A+%25250A%25250A%0A lista_nu%0A@@ -446,25 +446,31 @@%0A os: list%0A-%255Bint%255D = %255B%0A+%25255Bint%25255D = %25255B%0A 1, 2, 3,%0A@@ -474,18 +474,22 @@%0A  3, 4, 5%0A-%255D%250A%0A+%25255D%25250A%0A lista_do%0A@@ -500,25 +500,31 @@%0A os: list%0A-%255Bint%255D = %255B%0A+%25255Bint%25255D = %25255B%0A x * 10 f%0A@@ -544,18 +544,22 @@%0A _numeros%0A-%255D%250A%0A+%25255D%25250A%0A lista_nu%0A@@ -580,17 +580,23 @@%0A list%0A-%255Bint%255D = %255B%0A+%25255Bint%25255D = %25255B%0A 10, %0A@@ -613,11 +613,17 @@%0A , 50%0A-%255D%250A%250A%0A+%25255D%25250A%25250A%0A list%0A@@ -641,17 +641,19 @@%0A ppend(6)%0A-%250A%0A+%25250A%0A lista_nu%0A@@ -667,17 +667,19 @@%0A emove(1)%0A-%250A%0A+%25250A%0A lista_nu%0A@@ -694,17 +694,23 @@%0A ores%0A-%255B2%255D%0A+%25255B2%25255D%0A  = 99%0A-%250A%0A+%25250A%0A list%0A@@ -745,11 +745,17 @@%0A d 4)%0A-%250A%250A%250A%0A+%25250A%25250A%25250A%0A prin%0A@@ -770,17 +770,19 @@%0A numeros)%0A-%250A%0A+%25250A%0A print(li%0A@@ -794,17 +794,19 @@%0A obrados)%0A-%250A%0A+%25250A%0A print(li%0A@@ -825,8 +825,114 @@%0A aiores)%250A%0A++@@ -585,16 +585,46 @@%25250A 2%2525255D = 99%2525250A%25250A+lista_numerosmaiores.remove(3)%25250A %2525250A%2525250A%2525250Aprint%250A %25250A%250A\n %0A\n",
+            "lines": "135"
+        },
+        {
+            "label": "2025-11-10_17-43-44",
+            "content": "\nclass Foo:\n    def __init__(self, quantidade: int):\n        self.quantidade = 0\n\n    def __str__(self):\n        return f'Foo({self.quantidade})'\n\nlista_vazia: list[int] = []\nlista_preenchida: list[int] = [1, 2, 3, 4, 5]\nlista_preenchida_objetos: list[Foo] = [Foo(1), Foo(2), Foo(3), Foo(4), Foo(5)]\n\nlista_vazia.append(1)\nlista_preenchida.append(Foo(6))\n\nlista_numeros: list[int] = [1, 2, 3, 4, 5]\nlista_dobrados: list[int] = [x * 10 for x in lista_numeros]\nlista_numerosmaiores: list[int] = [10, 20, 30, 40, 50]\n\nlista_numeros.append(6)\nlista_numeros.remove(1)\nlista_numerosmaiores[2] = 99\nlista_numerosmaiores.remove(3 and 4)\n\n\nprint(lista_numeros)\nprint(lista_dobrados)\nprint(lista_numerosmaiores)\n",
+            "lines": "28"
+        }
+    ]
+}
