@@ -1,5 +1,5 @@
 class Pencil:
-    def __init__(self, thickness: int, barrel, tip ):
+    def __init__(self, thickness: int, barrel, tip):
         self.__thickness = int
         self.__barrel = Lead
         self.__tip = 0
@@ -11,10 +11,16 @@ class Lead:
         self.__thickness = thickness
         self.__size = size
 
-    def getSize(self):
+    def usagePerSheet(self):
 
-    def getThickness(self):
+    def getSize(self, mm: int):
+        return self.__size
 
-    def getHardness(self):
+    def getThickness(self, calibre: float):
+        return self.__thickness
+
+    def getHardness(self, dureza: str):
+
+
 
 
