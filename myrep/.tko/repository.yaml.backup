@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: ''
-  cache_timestamp: '2025-11-10 16:52:29'
+  cache_timestamp: '2025-11-12 22:58:53'
   filters:
   - listas
 expanded:
@@ -28,4 +28,4 @@ flags:
   graph: 0
   xray: 0
 lang: py
-selected: poo@array
+selected: poo@lapiseira

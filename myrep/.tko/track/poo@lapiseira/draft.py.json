@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-10_17-45-35",
+            "content": "@@ -1,423 +0,0 @@\n-class Pencil:%0A    def __init__(self, thickness: int, barrel, tip ):%0A        self.__thickness = int%0A        self.__barrel = Lead%0A        self.__tip = 0%0A        %0A%0Aclass Lead:%0A    def __init__(self, hardness: float, thickness: int, size: int):%0A        self.__hardness = hardness%0A        self.__thickness = thickness%0A        self.__size = size%0A%0A    def getSize(self):%0A%0A    def getThickness(self):%0A%0A    def getHardness(self):%0A%0A%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-10_18-02-05",
+            "content": "@@ -57,16 +57,17 @@\n rel, tip\n+ \n ):%0A     \n@@ -346,165 +346,51 @@\n def \n-usagePerSheet(self):%0A%0A    def getSize(self, mm: int):%0A        return self.__size%0A%0A    def getThickness(self, calibre: float):%0A        return self.__thickness\n+getSize(self):%0A%0A    def getThickness(self):\n %0A%0A  \n@@ -415,24 +415,9 @@\n self\n-, dureza: str):%0A%0A\n+):\n %0A%0A%0A\n",
+            "lines": "20"
+        },
+        {
+            "label": "2025-11-12_23-02-50",
+            "content": "class Pencil:\n    def __init__(self, thickness: int, barrel, tip):\n        self.__thickness = int\n        self.__barrel = Lead\n        self.__tip = 0\n        \n\nclass Lead:\n    def __init__(self, hardness: float, thickness: int, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n\n    def getSize(self, mm: int):\n        return self.__size\n\n    def getThickness(self, calibre: float):\n        return self.__thickness\n\n    def getHardness(self, dureza: str):\n\n\n\n\n",
+            "lines": "26"
+        }
+    ]
+}
