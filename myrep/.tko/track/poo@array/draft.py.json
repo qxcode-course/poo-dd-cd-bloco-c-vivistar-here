@@ -112,8 +112,13 @@
         },
         {
             "label": "2025-11-10_17-43-44",
-            "content": "\nclass Foo:\n    def __init__(self, quantidade: int):\n        self.quantidade = 0\n\n    def __str__(self):\n        return f'Foo({self.quantidade})'\n\nlista_vazia: list[int] = []\nlista_preenchida: list[int] = [1, 2, 3, 4, 5]\nlista_preenchida_objetos: list[Foo] = [Foo(1), Foo(2), Foo(3), Foo(4), Foo(5)]\n\nlista_vazia.append(1)\nlista_preenchida.append(Foo(6))\n\nlista_numeros: list[int] = [1, 2, 3, 4, 5]\nlista_dobrados: list[int] = [x * 10 for x in lista_numeros]\nlista_numerosmaiores: list[int] = [10, 20, 30, 40, 50]\n\nlista_numeros.append(6)\nlista_numeros.remove(1)\nlista_numerosmaiores[2] = 99\nlista_numerosmaiores.remove(3 and 4)\n\n\nprint(lista_numeros)\nprint(lista_dobrados)\nprint(lista_numerosmaiores)\n",
+            "content": "@@ -315,16 +315,48 @@\n ppend(1)\n+%0Alista_preenchida.append(Foo(6))\n %0A%0Alista_\n@@ -585,16 +585,52 @@\n 2%5D = 99%0A\n+lista_numerosmaiores.remove(3 and 4)\n %0A%0A%0Aprint\n",
             "lines": "28"
+        },
+        {
+            "label": "2025-11-14_12-30-00",
+            "content": "\nclass Foo:\n    def __init__(self, quantidade: int):\n        self.quantidade = 0\n\n    def __str__(self):\n        return f'Foo({self.quantidade})'\n\nlista_vazia: list[int] = []\nlista_preenchida: list[int] = [1, 2, 3, 4, 5]\nlista_preenchida_objetos: list[Foo] = [Foo(1), Foo(2), Foo(3), Foo(4), Foo(5)]\n\nlista_vazia.append(1)\n\nlista_numeros: list[int] = [1, 2, 3, 4, 5]\nlista_dobrados: list[int] = [x * 10 for x in lista_numeros]\nlista_numerosmaiores: list[int] = [10, 20, 30, 40, 50]\n\nlista_numeros.append(6)\nlista_numeros.remove(1)\nlista_numerosmaiores[2] = 99\n\n\n\nprint(lista_numeros)\nprint(lista_dobrados)\nprint(lista_numerosmaiores)\n",
+            "lines": "27"
         }
     ]
 }
