@@ -95,7 +95,7 @@ def main():
             pencil = Pencil(thickness)
 
         elif args[0] == "insert":
-            pencil.insert()
+            pencil.insert
 
         elif args[0] == "pull":
             pencil.pull()
