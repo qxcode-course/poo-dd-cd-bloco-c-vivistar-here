@@ -75,6 +75,7 @@ class Pencil:
             return
         
     def toString(self) -> str:
+
         return f"calibre: {self.thickness}, bico: {self.tip}, tambor: {self.barrel}"
 
 
