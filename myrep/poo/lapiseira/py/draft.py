@@ -38,7 +38,7 @@ class Pencil:
 
     def insert(self, lead: Lead) -> bool:
         if self.thickness != lead.getThickness():
-            print("fail: gafrite não compatível")
+            print("fail: calibre incompatível")
             return False
         
         self.barrel.append(lead)
@@ -46,11 +46,11 @@ class Pencil:
     
     def pull(self) -> bool:
         if self.tip is not None:
-            print("fail: remova o grafite primeiro")
+            print("fail: ja existe grafite no bico")
             return False
         
         if not self.barrel:
-            print("fail: não tem grafite no tambor")
+            print("fail: nao existe grafite no bico")
             return False
         
         lead = self.barrel.pop(0)
@@ -59,7 +59,7 @@ class Pencil:
     
     def remove(self) -> Lead | None:
         if self.tip is None:
-            print("fail: não tem grafite no bico")
+            print("fail: nao existe grafite no bico")
             return None
         
         lead = self.tip
@@ -68,15 +68,24 @@ class Pencil:
     
     def writePage(self) -> None:
         if self.tip is None:
-            print("fail: não tem grafite no bico")
+            print("fail: nao existe grafite no bico")
             return
         if self.tip.getSize() <= 10:
             print("fail: não é mais possível escrever com o grafite, por favor, retire o grafite")
             return
         
     def toString(self) -> str:
+        if self.tip is None:
+            tip_str = "[]"
+        else: 
+            tip_str = "[" + self.tip.toString() + "]"
 
-        return f"calibre: {self.thickness}, bico: {self.tip}, tambor: {self.barrel}"
+        if len(self.barrel) == 0:
+            barrel_str = "<>"
+        else:
+            barrel_str = "<" + "".join("[" + lead.toString() + "]" for lead in self.barrel) + ">"
+            
+        return f"calibre: {self.thickness}, bico: {tip_str}, tambor: {barrel_str}"
 
 
 
@@ -96,7 +105,11 @@ def main():
             pencil = Pencil(thickness)
 
         elif args[0] == "insert":
-            pencil.insert
+            thickness = float(args[1])
+            hardness = args[2]
+            size = int(args[3])
+            lead = Lead(thickness, hardness, size)
+            pencil.insert(lead)
 
         elif args[0] == "pull":
             pencil.pull()
