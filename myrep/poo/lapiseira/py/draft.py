@@ -1,8 +1,40 @@
-class Pencil:
-    def __init__(self, thickness: int):
+class Lead:
+    def __init__(self, thickness: int, hardness: str, size: int):
         self.thickness = thickness
-        self.tip = Lead | None = None
-        self.barrel = list[Lead] = []
+        self.hardness = hardness
+        self.size = size
+
+    def usagePerSheet(self):
+        if self.hardness == "HB":
+            return 1
+        elif self.hardness == "2B":
+            return 2
+        elif self.hardness == "4B":
+            return 4
+        elif self.hardness == "6B":
+            return 6
+    
+
+    def getSize(self):
+        return self.size
+    
+    def getThickness(self):
+        return self.thickness
+    
+    def getHardness(self):
+        return self.hardness
+    
+    def setSize(self, size: int):
+        self.size = size
+
+    def toString(self) -> str:
+        return f"{self.thickness}:{self.hardness}:{self.size}"
+
+class Pencil:
+    def __init__(self, thickness: float):
+        self.thickness = thickness
+        self.tip: Lead | None = None
+        self.barrel: list[Lead] = []
 
     def insert(self, lead: Lead) -> bool:
         if self.thickness != lead.getThickness():
@@ -42,25 +74,42 @@ class Pencil:
             print("fail: não é mais possível escrever com o grafite, por favor, retire o grafite")
             return
         
+    def toString(self) -> str:
+        return f"calibre: {self.thickness}, bico: {self.tip}, tambor: {self.barrel}"
 
 
-class Lead:
-    def __init__(self, thickness: int, hardness: str, size: int):
-        self.thickness = thickness
-        self.hardness = hardness
-        self.size = size
 
-    def usagePerSheet(self):
-    
+def main():
+    pencil = None
 
-    def getSize(self):
-        return self.size
-    
-    def getThickness(self):
-        return self.thickness
-    
-    def getHardness(self):
-        return self.hardness
-    
-    def setSize(self, size: int):
-        self.size = size
+    while True:
+        line = input()
+        args = line.split(" ")
+        print(f"${line}")
+
+        if args[0] == "end":
+            break
+
+        elif args[0] == "init":
+            thickness = float(args[1])
+            pencil = Pencil(thickness)
+
+        elif args[0] == "insert":
+            pencil.insert()
+
+        elif args[0] == "pull":
+            pencil.pull()
+
+        elif args[0] == "remove":
+            pencil.remove()
+        
+        elif args[0] == "write":
+            pencil.writePage()
+
+        elif args[0] == "show":
+            print(pencil.toString())
+
+
+
+
+main()
