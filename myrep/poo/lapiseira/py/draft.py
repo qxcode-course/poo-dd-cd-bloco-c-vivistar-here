@@ -70,10 +70,21 @@ class Pencil:
         if self.tip is None:
             print("fail: nao existe grafite no bico")
             return
+        
+        desgaste = self.tip.usagePerSheet()
+
         if self.tip.getSize() <= 10:
-            print("fail: não é mais possível escrever com o grafite, por favor, retire o grafite")
+            print("fail: tamanho insuficiente")
             return
         
+        resto = self.tip.getSize() - desgaste #type:  ignore
+        
+        if resto >= 10:
+            self.tip.setSize(resto) #type: ignore
+        else:
+            self.tip.setSize(10)
+            print("fail: folha incompleta")
+      
     def toString(self) -> str:
         if self.tip is None:
             tip_str = "[]"
@@ -108,20 +119,20 @@ def main():
             thickness = float(args[1])
             hardness = args[2]
             size = int(args[3])
-            lead = Lead(thickness, hardness, size)
-            pencil.insert(lead)
+            lead = Lead(thickness, hardness, size) #type: ignore
+            pencil.insert(lead) #type: ignore
 
         elif args[0] == "pull":
-            pencil.pull()
+            pencil.pull() #type: ignore
 
         elif args[0] == "remove":
-            pencil.remove()
+            pencil.remove() #type: ignore
         
         elif args[0] == "write":
-            pencil.writePage()
+            pencil.writePage() #type: ignore
 
         elif args[0] == "show":
-            print(pencil.toString())
+            print(pencil.toString()) #type: ignore
 
 
 
