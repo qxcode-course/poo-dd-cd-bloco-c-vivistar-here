@@ -30,19 +30,21 @@ class Trampoline:
         self.waiting: list[Kid] = []
 
     def arrive(self, kid: Kid) -> None:
-        self.waiting.append(kid) 
+        self.playing.insert(0, kid) 
 
     def enter(self) -> None:
-        if self.waiting:
-            kid = self.waiting.pop(0)
-            self.playing.append(kid)
+        if self.playing:
+            kid = self.playing.pop(0)
+            self.waiting.insert(0, kid)
         else:
             print("fail: nao ha crianças na fila de espera")
 
     def leave(self) -> None:
-        if self.playing:
-            kid = self.playing.pop(0)
-            self.waiting.append(kid)
+        if self.waiting:
+            kid = self.waiting.pop(0)
+            self.waiting.insert(0, kid)
+        else:
+            print("fail: nao ha crianças esperando")
 
     def removeFromList(self, name: str, lista: list[Kid]) -> Kid | None:
         for kid in lista:
@@ -58,8 +60,8 @@ class Trampoline:
         return self.removeFromList(name, self.waiting)
     
     def toString(self) -> str:
-        waiting_str = ",".join([f"{kid.getName()}:{kid.getAge()}" for kid in reversed(self.waiting)])
-        playing_str = ",".join([f"{kid.getName()}:{kid.getAge()}" for kid in self.playing])
+        playing_str = ", ".join([f"{kid.getName()}:{kid.getAge()}" for kid in self.playing])
+        waiting_str = ", ".join([f"{kid.getName()}:{kid.getAge()}" for kid in reversed(self.waiting)])
         return f"[{playing_str}] => [{waiting_str}]"
 
 
