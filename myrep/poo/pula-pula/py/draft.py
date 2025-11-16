@@ -9,16 +9,31 @@ class Kid:
     def getName(self):
         return self.name
     
-    def setAge(self) -> None:
-        if self.age is None: #olhar dps
+    def setAge(self, idade: int) -> None:
+        if idade:
+            self.age = idade
+        else:
             print("fail: criança sem idade")
-            return
-    
-    def setName(self) -> None:
-        if self.name is None:
+            
+    def setName(self, nome: str) -> None:
+        if nome:
+            self.name = nome
+        else:
             print("fail: criança sem nome")
-            return
         
     def toString(self) -> str:
         return f"{self.age}, {self.name}"
     
+class Trampoline:
+    def __init__(self):
+        self.playing: list[Kid] = []
+        self.waiting: list[Kid] = []
+
+    def arrive(self, kid: Kid) -> None:
+        self.kid.append(kid) #corrigir
+
+    def enter(self) -> None:
+
+    def leave(self) -> None:
+
+    def removeKid(self, name: str) Kid | None:
