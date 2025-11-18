@@ -27,35 +27,38 @@ class Trampoline:
         for i, kid in enumerate(lista):
            if kid.getName() == name:
                return lista.pop(i)
-           return None
+        return None
        
     
     def arrive(self, kid: Kid) -> None:
         self.waiting.insert(0, kid)
 
     def enter(self) -> None:
-        if self.playing:
-            kid = self.playing.pop(0)
-            self.waiting.insert(0, kid)
-        else:
-            print("fail: nao ha crianças na fila de espera")
-
+        if not self.waiting:
+            return
+        kid = self.waiting.pop()
+        self.playing.insert(0, kid)
+    
     def leave(self) -> None:
-        if self.waiting:
-            kid = self.waiting.pop(0)
-            self.playing.insert(0, kid)
-        else: 
-            print("fail: nao ha crianças no pula pula")
+        if not self.playing:
+            return
+        kid = self.playing.pop()
+        self.waiting.append(kid)
+
 
     def removeKid(self, name: str) -> Kid | None:
+        kid = self.removeFromList(name, self.waiting)
+        if kid:
+            return kid
         kid = self.removeFromList(name, self.playing)
         if kid:
             return kid
-        return self.removeFromList(name, self.waiting)
+        print(f"fail: {name} nao esta no pula-pula")
+        return None
     
     def toString(self) -> str:
-        waiting_str = ", ".join(str(x) for x in reversed(self.waiting))
-        playing_str = ", ".join(str(x) for x in self.playing)
+        waiting_str = ", ".join(x.toString() for x in (self.waiting))
+        playing_str = ", ".join(x.toString() for x in self.playing)
         return f"[{waiting_str}] => [{playing_str}]"
         
 
@@ -76,8 +79,15 @@ def main():
             kid = Kid(name, age)
             trampoline.arrive(kid)
 
+        elif args[0] == "enter":
+            trampoline.enter()
+
         elif args[0] == "leave":
             trampoline.leave()
+
+        elif args[0] == "remove":
+            name = args[1]
+            trampoline.removeKid(name)
 
         elif args[0] == "show":
             print(trampoline.toString())
