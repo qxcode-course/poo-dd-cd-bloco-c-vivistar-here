@@ -34,16 +34,13 @@ class Trampoline:
         self.waiting.insert(0, kid)
 
     def enter(self) -> None:
-        if not self.waiting:
-            return
         kid = self.waiting.pop()
-        self.playing.insert(0, kid)
+        self.playing = [kid] + self.playing
     
     def leave(self) -> None:
-        if not self.playing:
-            return
-        kid = self.playing.pop()
-        self.waiting.append(kid)
+        if self.playing:
+            kid = self.playing.pop()
+            self.waiting.insert(0, kid)
 
 
     def removeKid(self, name: str) -> Kid | None:
@@ -95,7 +92,3 @@ def main():
 main()
 
 
-# sabado eu me mato
-# eeeee
-# sabado eu me mato, oba!
-# sabado eu me mato
