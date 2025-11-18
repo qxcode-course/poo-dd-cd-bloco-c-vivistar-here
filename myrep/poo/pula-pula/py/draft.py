@@ -42,7 +42,7 @@ class Trampoline:
     def leave(self) -> None:
         if self.waiting:
             kid = self.waiting.pop(0)
-            self.waiting.insert(0, kid)
+            self.playing.insert(0, kid)
         else:
             print("fail: nao ha crianças esperando")
 
