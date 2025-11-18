@@ -12,8 +12,228 @@
         },
         {
             "label": "2025-11-12_23-02-50",
-            "content": "class Pencil:\n    def __init__(self, thickness: int, barrel, tip):\n        self.__thickness = int\n        self.__barrel = Lead\n        self.__tip = 0\n        \n\nclass Lead:\n    def __init__(self, hardness: float, thickness: int, size: int):\n        self.__hardness = hardness\n        self.__thickness = thickness\n        self.__size = size\n\n    def usagePerSheet(self):\n\n    def getSize(self, mm: int):\n        return self.__size\n\n    def getThickness(self, calibre: float):\n        return self.__thickness\n\n    def getHardness(self, dureza: str):\n\n\n\n\n",
+            "content": "@@ -50,107 +50,502 @@\n nt, \n-tip, barrel)%0A        self.thickness = thickness%0A        self.tip = tip%0A        self.barrel = barrel    \n+barrel, tip):%0A        self.__thickness = int%0A        self.__barrel = Lead%0A        self.__tip = 0%0A        %0A%0Aclass Lead:%0A    def __init__(self, hardness: float, thickness: int, size: int):%0A        self.__hardness = hardness%0A        self.__thickness = thickness%0A        self.__size = size%0A%0A    def usagePerSheet(self):%0A%0A    def getSize(self, mm: int):%0A        return self.__size%0A%0A    def getThickness(self, calibre: float):%0A        return self.__thickness%0A%0A    def getHardness(self, dureza: str):%0A%0A%0A%0A%0A\n",
             "lines": "26"
+        },
+        {
+            "label": "2025-11-14_23-31-57",
+            "content": "@@ -49,21 +49,21 @@\n int,\n+ tip,\n  barrel\n-:str):\n+)\n %0A   \n@@ -117,12 +117,11 @@\n p = \n-None\n+tip\n %0A   \n",
+            "lines": "5"
+        },
+        {
+            "label": "2025-11-15_00-12-23",
+            "content": "@@ -1,421 +1,73 @@\n-class Pencil:%0A    def __init__(self, thickness: int, barrel:str):%0A        self.thickness = thickness%0A        self.tip = None%0A        self.barrel = barrel    %0A%0A    def insert(self, lead: Lead) -%3E bool:%0A        if self.thickness != lead.getThickness():%0A            print(%22fail: gafrite n%C3%A3o compat%C3%ADvel%22)%0A            return False%0A        %0A        self.barrel.append(lead)%0A        return True%0A    %0A    def pull(self,) -%3E bool:\n+@@ -154,42 +154,4 @@%0A     %0A-%250A%250A    def insert(self, Lead):%250A        %0A\n",
+            "lines": "3"
+        },
+        {
+            "label": "2025-11-15_00-53-37",
+            "content": "@@ -40,27 +40,39 @@\n ickness: int\n+, barrel:str\n ):%0A\n-\n         self\n@@ -116,22 +116,8 @@\n ip =\n- Lead %7C None =\n  Non\n@@ -144,23 +144,18 @@\n l = \n-list%5BLead%5D = %5B%5D\n+barrel    \n %0A%0A  \n@@ -399,24 +399,25 @@\n ef pull(self\n+,\n ) -%3E bool:%0A \n@@ -418,1245 +418,4 @@\n ool:\n-%0A        if self.tip is not None:%0A            print(%22fail: remova o grafite primeiro%22)%0A            return False%0A        %0A        if not self.barrel:%0A            print(%22fail: n%C3%A3o tem grafite no tambor%22)%0A            return False%0A        %0A        lead = self.barrel.pop(0)%0A        self.tip = lead%0A        return True%0A    %0A    def remove(self) -%3E Lead %7C None:%0A        if self.tip is None:%0A            print(%22fail: n%C3%A3o tem grafite no bico%22)%0A            return None%0A        %0A        lead = self.tip%0A        self.tip = None%0A        return lead%0A    %0A    def writePage(self) -%3E None:%0A        if self.tip is None:%0A            print(%22fail: n%C3%A3o tem grafite no bico%22)%0A            return%0A        if self.tip.getSize() %3C= 10:%0A            print(%22fail: n%C3%A3o %C3%A9 mais poss%C3%ADvel escrever com o grafite, por favor, retire o grafite%22)%0A            return%0A        %0A%0A%0Aclass Lead:%0A    def __init__(self, thickness: int, hardness: str, size: int):%0A        self.thickness = thickness%0A        self.hardness = hardness%0A        self.size = size%0A%0A    def usagePerSheet(self):%0A%0A    def getSize(self):%0A        return self.size%0A    %0A    def getThickness(self):%0A        return self.thickness%0A    %0A    def getHardness(self):%0A        return self.hardness%0A    %0A    def setSize(self)%0A\n",
+            "lines": "15"
+        },
+        {
+            "label": "2025-11-15_13-15-42",
+            "content": "@@ -1460,21 +1460,16 @@\n t(self):\n-%0A    \n %0A%0A    de\n@@ -1663,43 +1663,6 @@\n self\n-, size: int):%0A        self.size = size\n+)\n %0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-15_13-19-51",
+            "content": "@@ -1262,109 +1262,8 @@\n    %0A\n-    def toString(self) -%3E str:%0A        return f%22%7Bself.thickness%7D:%7Bself.tip%7D:%7Bself.barrel%7D%22%0A%0A%0A        \n %0A%0Acl\n@@ -1465,234 +1465,8 @@\n f):%0A\n-        if self.hardness == %22HB%22:%0A            return 1%0A        elif self.hardness == %222B%22:%0A            return 2%0A        elif self.hardness == %224B%22:%0A            return 4%0A        elif self.hardness == %226B%22:%0A            return 6%0A\n     \n@@ -1707,99 +1707,4 @@\n ize%0A\n-%0A    def toString(self) -%3E str:%0A        return f%22%7Bself.thickness%7D:%7Bself.hardness%7D:%7Bself.size%7D%22%0A\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-15_13-37-02",
+            "content": "@@ -98,17 +98,18 @@\n self.tip\n-:\n+ =\n  Lead %7C \n@@ -139,17 +139,18 @@\n f.barrel\n-:\n+ =\n  list%5BLe\n@@ -2129,631 +2129,4 @@\n e%7D%22%0A\n-%0Adef main():%0A    pencil = Pencil()%0A%0A    while True:%0A        line = input()%0A        args = line.split(%22 %22)%0A        print(f%22$%7Bline%7D%22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        elif args%5B0%5D == %22init%22:%0A            thickness = int(args%5B1%5D)%0A            pencil = Pencil(thickness)%0A%0A        elif args%5B0%5D == %22insert%22:%0A            pencil.insert()%0A%0A        elif args%5B0%5D == %22pull%22:%0A            pencil.pull()%0A%0A        elif args%5B0%5D == %22remove%22:%0A            pencil.remove()%0A        %0A        elif args%5B0%5D == %22write%22:%0A            pencil.writePage()%0A%0A        elif args%5B0%5D == %22show%22:%0A            print(pencil.toString())%0A%0A%0A%0A%0Amain()\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-15_13-52-40",
+            "content": "@@ -1,769 +1,4 @@\n-class Lead:%0A    def __init__(self, thickness: int, hardness: str, size: int):%0A        self.thickness = thickness%0A        self.hardness = hardness%0A        self.size = size%0A%0A    def usagePerSheet(self):%0A        if self.hardness == %22HB%22:%0A            return 1%0A        elif self.hardness == %222B%22:%0A            return 2%0A        elif self.hardness == %224B%22:%0A            return 4%0A        elif self.hardness == %226B%22:%0A            return 6%0A    %0A%0A    def getSize(self):%0A        return self.size%0A    %0A    def getThickness(self):%0A        return self.thickness%0A    %0A    def getHardness(self):%0A        return self.hardness%0A    %0A    def setSize(self, size: int):%0A        self.size = size%0A%0A    def toString(self) -%3E str:%0A        return f%22%7Bself.thickness%7D:%7Bself.hardness%7D:%7Bself.size%7D%22%0A%0A\n clas\n@@ -1348,16 +1348,790 @@\n rrel%7D%22%0A%0A\n+%0A        %0A%0Aclass Lead:%0A    def __init__(self, thickness: int, hardness: str, size: int):%0A        self.thickness = thickness%0A        self.hardness = hardness%0A        self.size = size%0A%0A    def usagePerSheet(self):%0A        if self.hardness == %22HB%22:%0A            return 1%0A        elif self.hardness == %222B%22:%0A            return 2%0A        elif self.hardness == %224B%22:%0A            return 4%0A        elif self.hardness == %226B%22:%0A            return 6%0A    %0A%0A    def getSize(self):%0A        return self.size%0A    %0A    def getThickness(self):%0A        return self.thickness%0A    %0A    def getHardness(self):%0A        return self.hardness%0A    %0A    def setSize(self, size: int):%0A        self.size = size%0A%0A    def toString(self) -%3E str:%0A        return f%22%7Bself.thickness%7D:%7Bself.hardness%7D:%7Bself.size%7D%22\n %0A%0Adef ma\n",
+            "lines": "116"
+        },
+        {
+            "label": "2025-11-15_13-57-42",
+            "content": "@@ -806,20 +806,18 @@\n ckness: \n-floa\n+in\n t):%0A    \n@@ -2140,20 +2140,24 @@\n encil = \n-None\n+Pencil()\n %0A%0A    wh\n@@ -2355,12 +2355,10 @@\n s = \n-floa\n+in\n t(ar\n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_14-00-18",
+            "content": "@@ -2405,12 +2405,8 @@\n ness\n-, %5B%5D\n )%0A%0A \n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_14-01-03",
+            "content": "@@ -2401,16 +2401,20 @@\n hickness\n+, %5B%5D\n )%0A%0A     \n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_14-01-14",
+            "content": "@@ -2075,16 +2075,8 @@\n n f%22\n-calibre:\n %7Bsel\n@@ -2091,14 +2091,8 @@\n ess%7D\n-, bico\n :%7Bse\n@@ -2102,16 +2102,8 @@\n tip%7D\n-, tambor\n :%7Bse\n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_14-02-41",
+            "content": "@@ -2079,17 +2079,16 @@\n calibre:\n- \n %7Bself.th\n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_14-02-48",
+            "content": "@@ -2103,17 +2103,16 @@\n %7D, bico:\n- \n %7Bself.ti\n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_14-03-00",
+            "content": "@@ -2123,17 +2123,16 @@\n  tambor:\n- \n %7Bself.ba\n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_14-03-00",
+            "content": "@@ -1,2773 +1,56 @@\n-class Lead:%0A    def __init__(self, thickness: int, hardness: str, size: int):%0A        self.thickness = thickness%0A        self.hardness = hardness%0A        self.size = size%0A%0A    def usagePerSheet(self):%0A        if self.hardness == %22HB%22:%0A            return 1%0A        elif self.hardness == %222B%22:%0A            return 2%0A        elif self.hardness == %224B%22:%0A            return 4%0A        elif self.hardness == %226B%22:%0A            return 6%0A    %0A%0A    def getSize(self):%0A        return self.size%0A    %0A    def getThickness(self):%0A        return self.thickness%0A    %0A    def getHardness(self):%0A        return self.hardness%0A    %0A    def setSize(self, size: int):%0A        self.size = size%0A%0A    def toString(self) -%3E str:%0A        return f%22%7Bself.thickness%7D:%7Bself.hardness%7D:%7Bself.size%7D%22%0A%0Aclass Pencil:%0A    def __init__(self, thickness: float):%0A        self.thickness = thickness%0A        self.tip: Lead %7C None = None%0A        self.barrel: list%5BLead%5D = %5B%5D%0A%0A    def insert(self, lead: Lead) -%3E bool:%0A        if self.thickness != lead.getThickness():%0A            print(%22fail: gafrite n%C3%A3o compat%C3%ADvel%22)%0A            return False%0A        %0A        self.barrel.append(lead)%0A        return True%0A    %0A    def pull(self) -%3E bool:%0A        if self.tip is not None:%0A            print(%22fail: remova o grafite primeiro%22)%0A            return False%0A        %0A        if not self.barrel:%0A            print(%22fail: n%C3%A3o tem grafite no tambor%22)%0A            return False%0A        %0A        lead = self.barrel.pop(0)%0A        self.tip = lead%0A        return True%0A    %0A    def remove(self) -%3E Lead %7C None:%0A        if self.tip is None:%0A            print(%22fail: n%C3%A3o tem grafite no bico%22)%0A            return None%0A        %0A        lead = self.tip%0A        self.tip = None%0A        return lead%0A    %0A    def writePage(self) -%3E None:%0A        if self.tip is None:%0A            print(%22fail: n%C3%A3o tem grafite no bico%22)%0A            return%0A        if self.tip.getSize() %3C= 10:%0A            print(%22fail: n%C3%A3o %C3%A9 mais poss%C3%ADvel escrever com o grafite, por favor, retire o grafite%22)%0A            return%0A        %0A    def toString(self) -%3E str:%0A        return f%22calibre: %7Bself.thickness%7D, bico: %7Bself.tip%7D, tambor: %7Bself.barrel%7D%22%0A%0A%0A%0Adef main():%0A    pencil = None%0A%0A    while True:%0A        line = input()%0A        args = line.split(%22 %22)%0A        print(f%22$%7Bline%7D%22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        elif args%5B0%5D == %22init%22:%0A            thickness = float(args%5B1%5D)%0A            pencil = Pencil(thickness)%0A%0A        elif args%5B0%5D == %22insert%22:%0A            pencil.insert()%0A%0A        elif args%5B0%5D == %22pull%22:%0A            pencil.pull()%0A%0A        elif args%5B0%5D == %22remove%22:%0A            pencil.remove()%0A        %0A        elif args%5B0%5D == %22write%22:%0A            pencil.writePage()%0A%0A        elif args%5B0%5D == %22show%22:%0A            print(pencil.toString())%0A%0A%0A%0A%0Amain()\n+@@ -924,10 +924,10 @@%0A %255D = %0A-%253C%253E%0A+%255B%255D%0A %250A%250A  %0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2025-11-15_14-11-52",
+            "content": "@@ -1,2771 +1,52 @@\n-class Lead:%0A    def __init__(self, thickness: int, hardness: str, size: int):%0A        self.thickness = thickness%0A        self.hardness = hardness%0A        self.size = size%0A%0A    def usagePerSheet(self):%0A        if self.hardness == %22HB%22:%0A            return 1%0A        elif self.hardness == %222B%22:%0A            return 2%0A        elif self.hardness == %224B%22:%0A            return 4%0A        elif self.hardness == %226B%22:%0A            return 6%0A    %0A%0A    def getSize(self):%0A        return self.size%0A    %0A    def getThickness(self):%0A        return self.thickness%0A    %0A    def getHardness(self):%0A        return self.hardness%0A    %0A    def setSize(self, size: int):%0A        self.size = size%0A%0A    def toString(self) -%3E str:%0A        return f%22%7Bself.thickness%7D:%7Bself.hardness%7D:%7Bself.size%7D%22%0A%0Aclass Pencil:%0A    def __init__(self, thickness: float):%0A        self.thickness = thickness%0A        self.tip: Lead %7C None = None%0A        self.barrel: list%5BLead%5D = %5B%5D%0A%0A    def insert(self, lead: Lead) -%3E bool:%0A        if self.thickness != lead.getThickness():%0A            print(%22fail: gafrite n%C3%A3o compat%C3%ADvel%22)%0A            return False%0A        %0A        self.barrel.append(lead)%0A        return True%0A    %0A    def pull(self) -%3E bool:%0A        if self.tip is not None:%0A            print(%22fail: remova o grafite primeiro%22)%0A            return False%0A        %0A        if not self.barrel:%0A            print(%22fail: n%C3%A3o tem grafite no tambor%22)%0A            return False%0A        %0A        lead = self.barrel.pop(0)%0A        self.tip = lead%0A        return True%0A    %0A    def remove(self) -%3E Lead %7C None:%0A        if self.tip is None:%0A            print(%22fail: n%C3%A3o tem grafite no bico%22)%0A            return None%0A        %0A        lead = self.tip%0A        self.tip = None%0A        return lead%0A    %0A    def writePage(self) -%3E None:%0A        if self.tip is None:%0A            print(%22fail: n%C3%A3o tem grafite no bico%22)%0A            return%0A        if self.tip.getSize() %3C= 10:%0A            print(%22fail: n%C3%A3o %C3%A9 mais poss%C3%ADvel escrever com o grafite, por favor, retire o grafite%22)%0A            return%0A        %0A    def toString(self) -%3E str:%0A        return f%22calibre: %7Bself.thickness%7D, bico: %7Bself.tip%7D, tambor: %7Bself.barrel%7D%22%0A%0A%0A%0Adef main():%0A    pencil = None%0A%0A    while True:%0A        line = input()%0A        args = line.split(%22 %22)%0A        print(f%22$%7Bline%7D%22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        elif args%5B0%5D == %22init%22:%0A            thickness = float(args%5B1%5D)%0A            pencil = Pencil(thickness)%0A%0A        elif args%5B0%5D == %22insert%22:%0A            pencil.insert%0A%0A        elif args%5B0%5D == %22pull%22:%0A            pencil.pull()%0A%0A        elif args%5B0%5D == %22remove%22:%0A            pencil.remove()%0A        %0A        elif args%5B0%5D == %22write%22:%0A            pencil.writePage()%0A%0A        elif args%5B0%5D == %22show%22:%0A            print(pencil.toString())%0A%0A%0A%0A%0Amain()\n+@@ -2488,16 +2488,18 @@%0A l.insert%0A+()%0A %250A%250A      %0A\n",
+            "lines": "4"
+        },
+        {
+            "label": "2025-11-15_14-31-09",
+            "content": "@@ -2109,47 +2109,16 @@\n o: %7B\n-'%5B%5D' if tip is None else tip.toString()\n+self.tip\n %7D, t\n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_18-37-25",
+            "content": "@@ -2054,17 +2054,16 @@\n -%3E str:%0A\n-%0A\n         \n@@ -2105,24 +2105,55 @@\n  bico: %7B\n-self.tip\n+'%5B%5D' if tip is None else tip.toString()\n %7D, tambo\n",
+            "lines": "115"
+        },
+        {
+            "label": "2025-11-15_18-38-25",
+            "content": "@@ -2058,286 +2058,8 @@\n tr:%0A\n-        if self.tip is None:%0A            tip_str = %22%5B%5D%22%0A        else: tip_str = self.tip.toString()%0A%0A        if len(self.barrel) == 0:%0A            barrel_str = %22%3C%3E%22%0A        else:%0A            barrel_str = %22%3C%22 + %22,%22.join(lead.toString() for lead in self.barrel) + %22%3E%22%0A            \n %0A   \n",
+            "lines": "116"
+        },
+        {
+            "label": "2025-11-15_18-47-27",
+            "content": "@@ -2054,24 +2054,298 @@\n -%3E str:%0A    \n+    if self.tip is None:%0A            tip_str = %22%5B%5D%22%0A        else: tip_str = self.tip.toString()%0A%0A        if len(self.barrel) == 0:%0A            barrel_str = %22%3C%3E%22%0A        else:%0A            barrel_str = %22%3C%22 + %22,%22.join(lead.toString() for lead in self.barrel) + %22%3E%22%0A            \n %0A        ret\n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-15_18-48-34",
+            "content": "@@ -2062,282 +2062,8 @@\n     \n-    if self.tip is None:%0A            tip_str = %22%5B%5D%22%0A        else: tip_str = self.tip.toString()%0A%0A        if len(self.barrel) == 0:%0A            barrel_str = %22%3C%3E%22%0A        else:%0A            barrel_str = %22%3C%22 + %22,%22.join(lead.toString() for lead in self.barrel) + %22%3E%22%0A            \n %0A   \n@@ -2114,15 +2114,16 @@\n o: %7B\n-tip_str\n+self.tip\n %7D, t\n@@ -2134,18 +2134,19 @@\n r: %7B\n+self.\n barrel\n-_str\n %7D%22%0A%0A\n",
+            "lines": "116"
+        },
+        {
+            "label": "2025-11-15_18-55-48",
+            "content": "@@ -1045,18 +1045,20 @@\n il: \n-calibre in\n+gafrite n%C3%A3o \n comp\n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-15_18-57-29",
+            "content": "@@ -2763,18 +2763,16 @@\n l.insert\n-()\n %0A%0A      \n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-15_19-01-06",
+            "content": "@@ -2764,20 +2764,16 @@\n .insert(\n-lead\n )%0A%0A     \n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-15_19-01-28",
+            "content": "@@ -2742,161 +2742,8 @@\n t%22:%0A\n-            thickness = float(args%5B1%5D)%0A            hardness = args%5B2%5D%0A            size = int(args%5B3%5D)%0A            lead = Lead(thickness, hardness, size)%0A\n     \n",
+            "lines": "124"
+        },
+        {
+            "label": "2025-11-15_19-02-46",
+            "content": "@@ -2122,29 +2122,16 @@\n   else: \n-%0A            \n tip_str \n@@ -2131,22 +2131,16 @@\n ip_str =\n- %22%3C%22 +\n  self.ti\n@@ -2151,22 +2151,16 @@\n String()\n- + %22%3E%22\n %0A%0A      \n",
+            "lines": "128"
+        },
+        {
+            "label": "2025-11-15_19-07-11",
+            "content": "@@ -2144,16 +2144,22 @@\n ip_str =\n+ %22%3C%22 +\n  self.ti\n@@ -2170,16 +2170,22 @@\n String()\n+ + %22%3E%22\n %0A%0A      \n@@ -2239,18 +2239,16 @@\n str = %22%3C\n-%5B%5D\n %3E%22%0A     \n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-10-30",
+            "content": "@@ -2227,16 +2227,18 @@\n str = %22%3C\n+%5B%5D\n %3E%22%0A     \n@@ -2273,17 +2273,16 @@\n str = %22%3C\n-%5B\n %22 + %22,%22.\n@@ -2330,17 +2330,16 @@\n rel) + %22\n-%5D\n %3E%22%0A     \n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-10-53",
+            "content": "@@ -2277,16 +2277,17 @@\n %22%3C%5B%22 + %22\n+,\n %22.join(l\n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-12-55",
+            "content": "@@ -2271,16 +2271,17 @@\n str = %22%3C\n+%5B\n %22 + %22%22.j\n@@ -2288,14 +2288,8 @@\n oin(\n-%22%5B%22 + \n lead\n@@ -2303,14 +2303,8 @@\n ng()\n- + %22%5D%22\n  for\n@@ -2328,16 +2328,17 @@\n rel) + %22\n+%5D\n %3E%22%0A     \n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-15-09",
+            "content": "@@ -2148,14 +2148,8 @@\n tr =\n- %22%5B%22 +\n  sel\n@@ -2164,22 +2164,16 @@\n String()\n- + %22%5D%22\n %0A%0A      \n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-17-21",
+            "content": "@@ -1246,17 +1246,16 @@\n il: \n-j%C3%A1 existe\n+remova o\n  gra\n@@ -1251,38 +1251,39 @@\n emova o grafite \n-no bic\n+primeir\n o%22)%0A            \n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-18-01",
+            "content": "@@ -1243,17 +1243,17 @@\n %22fail: j\n-a\n+%C3%A1\n  existe \n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-18-10",
+            "content": "@@ -1,3246 +1,142 @@\n-class Lead:%0A    def __init__(self, thickness: int, hardness: str, size: int):%0A        self.thickness = thickness%0A        self.hardness = hardness%0A        self.size = size%0A%0A    def usagePerSheet(self):%0A        if self.hardness == %22HB%22:%0A            return 1%0A        elif self.hardness == %222B%22:%0A            return 2%0A        elif self.hardness == %224B%22:%0A            return 4%0A        elif self.hardness == %226B%22:%0A            return 6%0A    %0A%0A    def getSize(self):%0A        return self.size%0A    %0A    def getThickness(self):%0A        return self.thickness%0A    %0A    def getHardness(self):%0A        return self.hardness%0A    %0A    def setSize(self, size: int):%0A        self.size = size%0A%0A    def toString(self) -%3E str:%0A        return f%22%7Bself.thickness%7D:%7Bself.hardness%7D:%7Bself.size%7D%22%0A%0Aclass Pencil:%0A    def __init__(self, thickness: float):%0A        self.thickness = thickness%0A        self.tip: Lead %7C None = None%0A        self.barrel: list%5BLead%5D = %5B%5D%0A%0A    def insert(self, lead: Lead) -%3E bool:%0A        if self.thickness != lead.getThickness():%0A            print(%22fail: calibre incompat%C3%ADvel%22)%0A            return False%0A        %0A        self.barrel.append(lead)%0A        return True%0A    %0A    def pull(self) -%3E bool:%0A        if self.tip is not None:%0A            print(%22fail: ja existe grafite no bico%22)%0A            return False%0A        %0A        if not self.barrel:%0A            print(%22fail: nao existe grafite no bico%22)%0A            return False%0A        %0A        lead = self.barrel.pop(0)%0A        self.tip = lead%0A        return True%0A    %0A    def remove(self) -%3E Lead %7C None:%0A        if self.tip is None:%0A            print(%22fail: nao existe grafite no bicoj%22)%0A            return None%0A        %0A        lead = self.tip%0A        self.tip = None%0A        return lead%0A    %0A    def writePage(self) -%3E None:%0A        if self.tip is None:%0A            print(%22fail: n%C3%A3o tem grafite no bico%22)%0A            return%0A        if self.tip.getSize() %3C= 10:%0A            print(%22fail: n%C3%A3o %C3%A9 mais poss%C3%ADvel escrever com o grafite, por favor, retire o grafite%22)%0A            return%0A        %0A    def toString(self) -%3E str:%0A        if self.tip is None:%0A            tip_str = %22%5B%5D%22%0A        else: %0A            tip_str = %22%5B%22 + self.tip.toString() + %22%5D%22%0A%0A        if len(self.barrel) == 0:%0A            barrel_str = %22%3C%3E%22%0A        else:%0A            barrel_str = %22%3C%22 + %22%22.join(%22%5B%22 + lead.toString() + %22%5D%22 for lead in self.barrel) + %22%3E%22%0A            %0A        return f%22calibre: %7Bself.thickness%7D, bico: %7Btip_str%7D, tambor: %7Bbarrel_str%7D%22%0A%0A%0A%0Adef main():%0A    pencil = None%0A%0A    while True:%0A        line = input()%0A        args = line.split(%22 %22)%0A        print(f%22$%7Bline%7D%22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        elif args%5B0%5D == %22init%22:%0A            thickness = float(args%5B1%5D)%0A            pencil = Pencil(thickness)%0A%0A        elif args%5B0%5D == %22insert%22:%0A            thickness = float(args%5B1%5D)%0A            hardness = args%5B2%5D%0A            size = int(args%5B3%5D)%0A            lead = Lead(thickness, hardness, size)%0A            pencil.insert(lead)%0A%0A        elif args%5B0%5D == %22pull%22:%0A            pencil.pull()%0A%0A        elif args%5B0%5D == %22remove%22:%0A            pencil.remove()%0A        %0A        elif args%5B0%5D == %22write%22:%0A            pencil.writePage()%0A%0A        elif args%5B0%5D == %22show%22:%0A            print(pencil.toString())%0A%0A%0A%0A%0Amain()\n+@@ -1362,17 +1362,14 @@%0A l: n%0A-a%0A+%25C3%25A3%0A o %0A-exis%0A te%0A+m%0A  gra%0A@@ -1368,36 +1368,38 @@%0A  tem grafite no %0A-bico%0A+tambor%0A %2522)%250A            r%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2025-11-15_19-18-50",
+            "content": "@@ -1612,32 +1612,33 @@\n  grafite no bico\n+j\n %22)%0A            r\n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-18-51",
+            "content": "@@ -1813,33 +1813,30 @@\n int(%22fail: n\n-a\n+%C3%A3\n o \n-exis\n te\n+m\n  grafite no \n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_19-19-06",
+            "content": "@@ -2032,225 +2032,8 @@\n    %0A\n-        self.tip.setSize(self.tip.getSize() - self.tip.usagePerSheet())%0A        if self.tip.getSize() %3C= 10:%0A            print(%22fail: n%C3%A3o %C3%A9 mais poss%C3%ADvel escrever com o grafite, por favor, retire o grafite%22)%0A        %0A\n     \n",
+            "lines": "129"
+        },
+        {
+            "label": "2025-11-15_21-42-25",
+            "content": "@@ -1820,28 +1820,34 @@\n il: \n-tamanho insuficiente\n+nao existe grafite no bico\n %22)%0A \n",
+            "lines": "133"
+        },
+        {
+            "label": "2025-11-15_21-46-39",
+            "content": "@@ -1820,34 +1820,28 @@\n il: \n-nao existe grafite no bico\n+tamanho insuficiente\n %22)%0A \n",
+            "lines": "133"
+        },
+        {
+            "label": "2025-11-15_21-46-48",
+            "content": "@@ -1868,62 +1868,8 @@\n urn%0A\n-        %0A        desgaste = self.tip.usagePerSheet()%0A%0A\n     \n@@ -1897,24 +1897,24 @@\n ze() %3C= 10:%0A\n+\n             \n@@ -2028,35 +2028,32 @@\n        %0A        \n-if \n self.tip.getSize\n@@ -2049,47 +2049,16 @@\n tip.\n-g\n+s\n etSize(\n-) - desgaste %3E 10:%0A            \n self\n@@ -2058,32 +2058,36 @@\n ze(self.tip.\n-s\n+g\n etSize(\n+) - \n self.tip.get\n@@ -2087,65 +2087,35 @@\n tip.\n-getSize() - desgaste)%0A            return%0A        %0A       \n+usagePerSheet())%0A        if\n  sel\n@@ -2124,19 +2124,24 @@\n tip.\n-s\n+g\n etSize(\n+) %3C= \n 10\n-)\n+:\n %0A   \n@@ -2137,32 +2137,36 @@\n  %3C= 10:%0A        \n+    \n print(%22fail: fol\n@@ -2166,37 +2166,84 @@\n il: \n-folha incompleta%22)%0A%0A        %0A\n+n%C3%A3o %C3%A9 mais poss%C3%ADvel escrever com o grafite, por favor, retire o grafite%22)%0A  \n     \n",
+            "lines": "133"
+        },
+        {
+            "label": "2025-11-15_21-52-57",
+            "content": "@@ -2094,15 +2094,10 @@\n     \n-resto =\n+if\n  sel\n@@ -2126,37 +2126,10 @@\n aste\n-%0A        %0A        if resto\n  %3E\n-=\n  10:\n@@ -2162,13 +2162,37 @@\n ize(\n-resto\n+self.tip.getSize() - desgaste\n )%0A  \n@@ -2193,34 +2193,44 @@\n te)%0A        \n-else:%0A    \n+    return%0A        %0A\n         self\n@@ -2246,36 +2246,32 @@\n ize(10)%0A        \n-    \n print(%22fail: fol\n@@ -2285,16 +2285,26 @@\n mpleta%22)\n+%0A%0A        \n %0A      %0A\n",
+            "lines": "141"
+        },
+        {
+            "label": "2025-11-15_21-57-49",
+            "content": "@@ -1984,26 +1984,77 @@\n il: \n-tamanho insuficien\n+n%C3%A3o %C3%A9 mais poss%C3%ADvel escrever com o grafite, por favor, retire o grafi\n te%22)\n",
+            "lines": "140"
+        },
+        {
+            "label": "2025-11-15_21-58-10",
+            "content": "@@ -2080,23 +2080,8 @@\n aste\n- #type:  ignore\n %0A   \n@@ -2145,30 +2145,16 @@\n e(resto)\n- #type: ignore\n %0A       \n@@ -3149,30 +3149,16 @@\n s, size)\n- #type: ignore\n %0A       \n@@ -3181,30 +3181,16 @@\n rt(lead)\n- #type: ignore\n %0A%0A      \n@@ -3240,30 +3240,16 @@\n l.pull()\n- #type: ignore\n %0A%0A      \n@@ -3303,30 +3303,16 @@\n remove()\n- #type: ignore\n %0A       \n@@ -3376,30 +3376,16 @@\n tePage()\n- #type: ignore\n %0A%0A      \n@@ -3450,22 +3450,8 @@\n g())\n- #type: ignore\n %0A%0A%0A%0A\n",
+            "lines": "140"
+        },
+        {
+            "label": "2025-11-16_22-46-28",
+            "content": "class Lead:\n    def __init__(self, thickness: int, hardness: str, size: int):\n        self.thickness = thickness\n        self.hardness = hardness\n        self.size = size\n\n    def usagePerSheet(self):\n        if self.hardness == \"HB\":\n            return 1\n        elif self.hardness == \"2B\":\n            return 2\n        elif self.hardness == \"4B\":\n            return 4\n        elif self.hardness == \"6B\":\n            return 6\n    \n\n    def getSize(self):\n        return self.size\n    \n    def getThickness(self):\n        return self.thickness\n    \n    def getHardness(self):\n        return self.hardness\n    \n    def setSize(self, size: int):\n        self.size = size\n\n    def toString(self) -> str:\n        return f\"{self.thickness}:{self.hardness}:{self.size}\"\n\nclass Pencil:\n    def __init__(self, thickness: float):\n        self.thickness = thickness\n        self.tip: Lead | None = None\n        self.barrel: list[Lead] = []\n\n    def insert(self, lead: Lead) -> bool:\n        if self.thickness != lead.getThickness():\n            print(\"fail: calibre incompat\u00edvel\")\n            return False\n        \n        self.barrel.append(lead)\n        return True\n    \n    def pull(self) -> bool:\n        if self.tip is not None:\n            print(\"fail: ja existe grafite no bico\")\n            return False\n        \n        if not self.barrel:\n            print(\"fail: nao existe grafite no bico\")\n            return False\n        \n        lead = self.barrel.pop(0)\n        self.tip = lead\n        return True\n    \n    def remove(self) -> Lead | None:\n        if self.tip is None:\n            print(\"fail: nao existe grafite no bico\")\n            return None\n        \n        lead = self.tip\n        self.tip = None\n        return lead\n    \n    def writePage(self) -> None:\n        if self.tip is None:\n            print(\"fail: nao existe grafite no bico\")\n            return\n        \n        desgaste = self.tip.usagePerSheet()\n\n        if self.tip.getSize() <= 10:\n            print(\"fail: tamanho insuficiente\")\n            return\n        \n        resto = self.tip.getSize() - desgaste #type:  ignore\n        \n        if resto >= 10:\n            self.tip.setSize(resto) #type: ignore\n        else:\n            self.tip.setSize(10)\n            print(\"fail: folha incompleta\")\n      \n    def toString(self) -> str:\n        if self.tip is None:\n            tip_str = \"[]\"\n        else: \n            tip_str = \"[\" + self.tip.toString() + \"]\"\n\n        if len(self.barrel) == 0:\n            barrel_str = \"<>\"\n        else:\n            barrel_str = \"<\" + \"\".join(\"[\" + lead.toString() + \"]\" for lead in self.barrel) + \">\"\n            \n        return f\"calibre: {self.thickness}, bico: {tip_str}, tambor: {barrel_str}\"\n\n\n\ndef main():\n    pencil = None\n\n    while True:\n        line = input()\n        args = line.split(\" \")\n        print(f\"${line}\")\n\n        if args[0] == \"end\":\n            break\n\n        elif args[0] == \"init\":\n            thickness = float(args[1])\n            pencil = Pencil(thickness)\n\n        elif args[0] == \"insert\":\n            thickness = float(args[1])\n            hardness = args[2]\n            size = int(args[3])\n            lead = Lead(thickness, hardness, size) #type: ignore\n            pencil.insert(lead) #type: ignore\n\n        elif args[0] == \"pull\":\n            pencil.pull() #type: ignore\n\n        elif args[0] == \"remove\":\n            pencil.remove() #type: ignore\n        \n        elif args[0] == \"write\":\n            pencil.writePage() #type: ignore\n\n        elif args[0] == \"show\":\n            print(pencil.toString()) #type: ignore\n\n\n\n\nmain()",
+            "lines": "140"
         }
     ]
 }

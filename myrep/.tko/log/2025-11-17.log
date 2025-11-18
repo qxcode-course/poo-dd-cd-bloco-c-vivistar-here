@@ -1,0 +1,20 @@
+2025-11-17 23:27:25, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-17 23:27:25, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:27:26, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:27:26, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:27:26, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:27:28, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-17 23:27:53, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-17 23:27:54, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:30:45, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:30:45, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:30:46, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:34:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:34:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:34:48, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:34:53, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-17 23:34:55, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-17 23:34:55, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:42:56, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:42:56, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:20
+2025-11-17 23:42:57, MOVE, v:1, k:poo@pula-pula, mode:BACK
