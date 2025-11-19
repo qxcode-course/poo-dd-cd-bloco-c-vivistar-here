@@ -59,4 +59,43 @@ class Theater:
         
         self.seats[index] = None
 
+    def getSeats(self):
+        self.seats: list[Client | None] 
+        return self.seats
     
+    def toString(self) -> str:
+        lista: list[str] = []
+        for client in self.seats:
+            if client is None:
+                lista.append("-")
+            else:
+                lista.append(str(client))
+
+        mostrar = ", ".join(lista)
+        return "[" + mostrar + "]"
+
+def main():
+    theater = Theater(0)
+
+    while True: 
+        line = input()
+        args = line.split(" ")
+        print(f"${line}")
+
+        if args[0] == "end":
+            break
+
+        elif args[0] == "init":
+            theater = Theater(int(args[1]))
+
+        elif args[0] == "show":
+            print(theater)
+
+        elif args[0] == "reserve":
+            theater.reserve(args[1], int(args[2]), int(args[3]))
+
+        elif args[0] == "cancel":
+            theater.cancel(args[1])
+
+main()
+        
