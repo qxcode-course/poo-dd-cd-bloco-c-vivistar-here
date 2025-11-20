@@ -20,8 +20,8 @@ class Client:
     
 class Theater:
     def __init__(self, capacity: int):
-        self.capacity = capacity
-        self.seats: list[Client | None] = [None]
+        self.capacity = capacity 
+        self.seats: list[Client | None] = [None] * capacity
 
     def search(self, name: str):
         for i in range(len(self.seats)):
@@ -38,22 +38,25 @@ class Theater:
             print("fail: cadeira nao existe")
             return False
         if self.seats[index] is not None:
-            print("fail: cliente ja esta no sinema")
-
+            print("fail: cadeira ocupada")
+        if self.search(id) is not None:
+            print("fail: cliente ja esta no cinema")
+            return False
         self.seats [index] = Client(id, phone)
         return True
     
     def cancel(self, id: str):
         index = self.search(id)
         if index is None:
-            print("fail: cliente nao esta no cinema")
+            print(f"fail: cliente nao esta no cinema")
             return 
         self.seats[index] = None
 
     def getSeats(self):
+        self.seats: list[Client | None]
         return self.seats
     
-    def __str__(self) -> str:
+    def toString(self) -> str:
         lista: list[str] = []
         for client in self.seats:
             if client is None:
@@ -69,7 +72,7 @@ def main():
     while True:
         line = input()
         args = line.split(" ")
-        print("${line}")
+        print(f"${line}")
 
         if args[0] == "end":
             break
@@ -78,7 +81,7 @@ def main():
             theater = Theater(int(args[1]))
 
         elif args[0] == "show":
-            print(theater)
+            print(theater.toString())
 
         elif args[0] == "reserve":
             theater.reserve(args[1], int(args[2]), int(args[3]))
