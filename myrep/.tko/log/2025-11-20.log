@@ -92,3 +92,8 @@
 2025-11-20 01:17:06, EXEC, v:1, k:poo@cinema, mode:FULL, rate:100, size:93
 2025-11-20 01:20:14, MOVE, v:1, k:poo@cinema, mode:BACK
 2025-11-20 01:23:27, MOVE, v:1, k:poo@junkfood, mode:DOWN
+2025-11-20 01:24:14, MOVE, v:1, k:poo@junkfood, mode:PICK
+2025-11-20 01:24:15, EXEC, v:1, k:poo@junkfood, mode:FULL, rate:0, size:0
+2025-11-20 01:45:25, MOVE, v:1, k:poo@junkfood, mode:PICK
+2025-11-20 01:45:26, EXEC, v:1, k:poo@junkfood, mode:FULL, rate:0, size:47
+2025-11-20 01:45:27, MOVE, v:1, k:poo@junkfood, mode:BACK

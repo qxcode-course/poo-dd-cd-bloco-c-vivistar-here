@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-20_01-24-15",
+            "content": "@@ -1,1094 +0,0 @@\n-#farei at%C3%A9 23h sena, tenho que dormir%0A%0Aclass Slot:%0A    def __init__(self, name: str, price: float, quantity: int):%0A        self.name = name%0A        self.price = price%0A        self.quantity = quantity%0A%0A    def getName(self):%0A        return self.name%0A    %0A    def getPrice(self, price: float):%0A        return self.price%0A    %0A    def getQuantity(self):%0A        return self.quantity%0A    %0A    def setName(self, name: str) -%3E None:%0A        self.name = name%0A%0A    def setPrice(self, price: float):%0A        self.price = price%0A%0A    def setQuantity(self, quantity: int):%0A        self.quantity = quantity%0A%0A    def __str__(self):%0A        return f%22%7Bself.name%7D:%7Bself.price%7D:%7Bself.quantity%7D%22%0A    %0Aclass VendingMachine:%0A    def __init__(self, capacity: int):%0A        self.capacity = capacity%0A        self.slots: list%5BSlot%5D%0A        self.profit: float %0A        self.cash: float%0A    %0A    def getSlot(self, index: int) -%3E Slot:%0A        return self.slots%5Bindex%5D%0A    %0A    def setSlot(self, index: int, slot: Slot) -%3E None:%0A        self.slots%5Bindex%5D = slot%0A%0A    def clearSlot(self, index: int) -%3E None:%0A        %0A%0A%0A    \n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-20_01-45-26",
+            "content": "#farei at\u00e9 23h sena, tenho que dormir\n\nclass Slot:\n    def __init__(self, name: str, price: float, quantity: int):\n        self.name = name\n        self.price = price\n        self.quantity = quantity\n\n    def getName(self):\n        return self.name\n    \n    def getPrice(self, price: float):\n        return self.price\n    \n    def getQuantity(self):\n        return self.quantity\n    \n    def setName(self, name: str) -> None:\n        self.name = name\n\n    def setPrice(self, price: float):\n        self.price = price\n\n    def setQuantity(self, quantity: int):\n        self.quantity = quantity\n\n    def __str__(self):\n        return f\"{self.name}:{self.price}:{self.quantity}\"\n    \nclass VendingMachine:\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.slots: list[Slot]\n        self.profit: float \n        self.cash: float\n    \n    def getSlot(self, index: int) -> Slot:\n        return self.slots[index]\n    \n    def setSlot(self, index: int, slot: Slot) -> None:\n        self.slots[index] = slot\n\n    def clearSlot(self, index: int) -> None:\n        \n\n\n    ",
+            "lines": "47"
+        }
+    ]
+}
