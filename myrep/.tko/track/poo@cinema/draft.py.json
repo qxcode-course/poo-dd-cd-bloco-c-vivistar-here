@@ -2,8 +2,128 @@
     "patches": [
         {
             "label": "2025-11-18_13-21-03",
-            "content": "",
+            "content": "@@ -1,565 +0,0 @@\n-class Client:%0A    def __init__(self, id: str, phone: int):%0A        self.id = id%0A        self.phone = phone%0A%0A    def getPhone(self) -%3E int:%0A        return self.phone%0A%0A    def setPhone(self, fone: int):%0A        self.phone = fone%0A    %0A    def getId(self) -%3E str:%0A        return self.id%0A    %0A    def setId(self, id: str):%0A        self.id = id%0A%0A    def toString(self) -%3E str:%0A        return f%22%7Bself.id%7D, %7Bself.phone%7D%22%0A    %0A%0Aclass Theater:%0A    def __init__(self, capacity: int):%0A        self.capacity = capacity%0A        self.seats: list%5BClient %7C None%5D = %5BNone%5D * capacity\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-18_23-30-00",
+            "content": "@@ -469,28 +469,8 @@\n nt):\n-        # construtor\n %0A   \n@@ -562,422 +562,4 @@\n city\n-%0A%0A    def search(self, name: str):%0A        for i in range(len(self.seats)):    #vai acessar cada posi%C3%A7%C3%A3o da lista usando i%0A            client = self.seats%5Bi%5D          #pega o conte%C3%BAdo da cadeira i e guarda no client%0A            if client is not None and client.getId() == name:      #ver se a cadeira tem um cliente e se o id %C3%A9 igual ao name%0A                return i                    #retorna o i%0A        return None\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-11-18_23-38-47",
+            "content": "@@ -1,12 +1,33 @@\n+@@ -1,1013 +1,45 @@%0A-\n class Client\n@@ -27,17 +27,19 @@\n  Client:\n-%0A\n+%250A\n     def \n@@ -66,33 +66,35 @@\n tr, phone: int):\n-%0A\n+%250A\n         self.id \n@@ -97,17 +97,19 @@\n .id = id\n-%0A\n+%250A\n         \n@@ -122,26 +122,30 @@\n hone = phone\n-%0A%0A\n+%250A%250A\n     def getP\n@@ -160,15 +160,19 @@\n f) -\n-%3E\n+%253E\n  int:\n-%0A\n+%250A\n     \n@@ -192,18 +192,22 @@\n lf.phone\n-%0A%0A\n+%250A%250A\n     def \n@@ -232,17 +232,19 @@\n e: int):\n-%0A\n+%250A\n         \n@@ -260,22 +260,26 @@\n e = fone\n-%0A\n+%250A\n     \n-%0A\n+%250A\n     def \n@@ -283,39 +283,43 @@\n ef getId(self) -\n-%3E\n+%253E\n  str:\n-%0A\n+%250A\n         return s\n@@ -324,22 +324,26 @@\n  self.id\n-%0A\n+%250A\n     \n-%0A\n+%250A\n     def \n@@ -359,25 +359,27 @@\n f, id: str):\n-%0A\n+%250A\n         self\n@@ -386,18 +386,22 @@\n .id = id\n-%0A%0A\n+%250A%250A\n     def \n@@ -420,15 +420,19 @@\n f) -\n-%3E\n+%253E\n  str:\n-%0A\n+%250A\n     \n@@ -447,21 +447,29 @@\n rn f\n-%22%7B\n+%2522%257B\n self.id\n-%7D, %7B\n+%257D, %257B\n self\n@@ -478,17 +478,27 @@\n hone\n-%7D%22%0A    %0A%0A\n+%257D%2522%250A    %250A%250A\n clas\n@@ -507,17 +507,19 @@\n Theater:\n-%0A\n+%250A\n     def \n@@ -568,17 +568,19 @@\n nstrutor\n-%0A\n+%250A\n         \n@@ -603,17 +603,19 @@\n capacity\n-%0A\n+%250A\n         \n@@ -634,32 +634,42 @@\n list\n-%5B\n+%255B\n Client \n-%7C\n+%257C\n  None\n-%5D = %5B\n+%255D = %255B\n None\n-%5D\n+%255D\n  * c\n@@ -679,10 +679,14 @@\n city\n-%0A%0A\n+%250A%250A\n     \n@@ -713,17 +713,19 @@\n e: str):\n-%0A\n+%250A\n         \n@@ -786,10 +786,20 @@\n posi\n-%C3%A7%C3%A3\n+%25C3%25A7%25C3%25A3\n o da\n@@ -813,17 +813,19 @@\n usando i\n-%0A\n+%250A\n         \n@@ -851,11 +851,15 @@\n eats\n-%5Bi%5D\n+%255Bi%255D\n     \n@@ -881,9 +881,14 @@\n onte\n-%C3%BA\n+%25C3%25BA\n do d\n@@ -917,17 +917,19 @@\n o client\n-%0A\n+%250A\n         \n@@ -1034,9 +1034,14 @@\n  id \n-%C3%A9\n+%25C3%25A9\n  igu\n@@ -1050,17 +1050,19 @@\n  ao name\n-%0A\n+%250A\n         \n@@ -1109,17 +1109,19 @@\n orna o i\n-%0A\n+%250A\n         \n@@ -1135,233 +1135,539 @@\n None\n-%0A    %0A    def verifyIndex(self, index: int) -%3E bool:%0A        return 0 %3C= index %3C len(self.seats) #garante que o index t%C3%A1 entre 0 e o ultimo index v%C3%A1lido (checagem)%0A    %0A    def reserve(self, id: str, phone: int, index\n+%250A    %250A%0A+@@ -1000,245 +1000,4 @@%250A None%250A-%25250A    %25250A%0A     %0A@@ -69,32 +69,36 @@%0A ndex: int) -%0A-%253E%0A+%25253E%0A  bool:%0A-%250A%0A+%25250A%0A         retu%0A@@ -106,17 +106,19 @@%0A n 0 %0A-%253C%0A+%25253C%0A = index %0A %253C le%0A@@ -117,9 +117,11 @@%0A dex %0A-%253C%0A+%25253C%0A  len%0A@@ -155,17 +155,22 @@%0A  index t%0A-%25C3%25A1%0A+%2525C3%2525A1%0A  entre 0%0A@@ -192,9 +192,14 @@%0A ex v%0A-%25C3%25A1%0A+%2525C3%2525A1%0A lido%0A@@ -213,14 +213,18 @@%0A gem)%0A-%250A%0A+%25250A%0A     %0A-%250A%0A+%25250A%0A     %0A@@ -279,20 +279,24 @@%0A t) -%0A-%253E%0A+%25253E%0A  bool:%0A-%250A%0A+%25250A%0A         %0A@@ -275,28 +275,29 @@%0A \n : int) -\n %3E bo\n@@ -1666,20 +1666,28 @@\n t) -\n-%3E\n+%25253E\n  bool:\n-%0A\n+%25250A\n         \n@@ -1678,16 +1678,22 @@\n ol:%25250A        \n+%0A+%250A%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2025-11-19_12-35-46",
+            "content": "@@ -1241,608 +1241,4 @@\n     \n-if not self.verifyIndex(index):             #v%C3%AA se a cadeira existe%0A            print(%22fail: cadeira nao existe%22)%0A            return False%0A        %0A        if self.seats%5Bindex%5D is not None:%0A            print(%22fail: cadeira ocupada%22)    #v%C3%AA se a cadeira t%C3%A1 ocupada%0A            return False%0A        %0A        if self.search(id) is not None:%0A            print(%22fail: cliente ja esta na sala de cinema%22)   #v%C3%AA se o cliente j%C3%A1 est%C3%A1 presente na sala%0A            return False%0A        %0A        self.seats%5Bindex%5D = Client(id, phone)  # faz a reserva%0A        return True%0A    %0A    def cancel(self, id: str):%0A        \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-11-19_12-46-26",
+            "content": "@@ -1845,189 +1845,4 @@\n     \n-index = self.search(id)%0A%0A        if index is None:%0A            print(f%22fail: cliente %7Bid%7D nao est%C3%A1 na sala de cinema%22)%0A            return%0A        %0A        self.seats%5Bindex%5D = None%0A%0A    \n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-19_12-59-27",
+            "content": "@@ -1,2925 +1,6583 @@\n-class Client:%0A    def __init__(self, id: str, phone: int):%0A        self.id = id%0A        self.phone = phone%0A%0A    def getPhone(self) -%3E int:%0A        return self.phone%0A%0A    def setPhone(self, fone: int):%0A        self.phone = fone%0A    %0A    def getId(self) -%3E str:%0A        return self.id%0A    %0A    def setId(self, id: str):%0A        self.id = id%0A%0A    def toString(self) -%3E str:%0A        return f%22%7Bself.id%7D, %7Bself.phone%7D%22%0A    %0A%0Aclass Theater:%0A    def __init__(self, capacity: int):        # construtor%0A        self.capacity = capacity%0A        self.seats: list%5BClient %7C None%5D = %5BNone%5D * capacity%0A%0A    def search(self, name: str):%0A        for i in range(len(self.seats)):    #vai acessar cada posi%C3%A7%C3%A3o da lista usando i%0A            client = self.seats%5Bi%5D          #pega o conte%C3%BAdo da cadeira i e guarda no client%0A            if client is not None and client.getId() == name:      #ver se a cadeira tem um cliente e se o id %C3%A9 igual ao name%0A                return i                    #retorna o i%0A        return None%0A    %0A    def verifyIndex(self, index: int) -%3E bool:%0A        return 0 %3C= index %3C len(self.seats) #garante que o index t%C3%A1 entre 0 e o ultimo index v%C3%A1lido (checagem)%0A    %0A    def reserve(self, id: str, phone: int, index: int) -%3E bool:%0A        if not self.verifyIndex(index):             #v%C3%AA se a cadeira existe%0A            print(%22fail: cadeira nao existe%22)%0A            return False%0A        %0A        if self.seats%5Bindex%5D is not None:%0A            print(%22fail: cadeira ocupada%22)    #v%C3%AA se a cadeira t%C3%A1 ocupada%0A            return False%0A        %0A        if self.search(id) is not None:%0A            print(%22fail: cliente ja esta na sala de cinema%22)   #v%C3%AA se o cliente j%C3%A1 est%C3%A1 presente na sala%0A            return False%0A        %0A        self.seats%5Bindex%5D = Client(id, phone)  # faz a reserva%0A        return True%0A    %0A    def cancel(self, id: str):%0A        index = self.search(id)%0A%0A        if index is None:%0A            print(f%22fail: cliente %7Bid%7D nao est%C3%A1 na sala de cinema%22)%0A            return%0A        %0A        self.seats%5Bindex%5D = None%0A%0A    def getSeats(self):%0A        self.seats: list%5BClient %7C None%5D %0A        return self.seats%0A    %0A    def toString(self) -%3E str:%0A        lista: list%5Bstr%5D = %5B%5D%0A        for client in self.seats:%0A            if client is None:%0A                lista.append(%22-%22)%0A            else:%0A                lista.append(str(client))%0A%0A        mostrar = %22, %22.join(lista)%0A        return %22%5B%22 + mostrar + %22%5D%22%0A%0Adef main():%0A    theater = Theater()%0A%0A    while True: %0A        line = input()%0A        args = line.split(%22 %22)%0A        print(f%22$%7Bline%7D%22)%0A%0A        if args%5B0%5D == %22end%22:%0A            break%0A%0A        elif args%5B0%5D == %22init%22:%0A            theater = Theater(int(args%5B1%5D))%0A%0A        elif args%5B0%5D == %22show%22:%0A            print(theater)%0A%0A        elif args%5B0%5D == %22reserve%22:%0A            theater.reserve(args%5B1%5D, int(args%5B2%5D), int(args%5B3%5D))%0A%0A        elif args%5B0%5D == %22cancel%22:%0A            theater.cancel(args%5B1%5D)%0A%0Amain()%0A        \n+@@ -1,12 +1,33 @@%0A+@@ -1,2037 +1,34 @@%250A-%0A class Client%0A@@ -27,17 +27,19 @@%0A  Client:%0A-%250A%0A+%25250A%0A     def %0A@@ -66,33 +66,35 @@%0A tr, phone: int):%0A-%250A%0A+%25250A%0A         self.id %0A@@ -97,17 +97,19 @@%0A .id = id%0A-%250A%0A+%25250A%0A         %0A@@ -122,26 +122,30 @@%0A hone = phone%0A-%250A%250A%0A+%25250A%25250A%0A     def getP%0A@@ -160,15 +160,19 @@%0A f) -%0A-%253E%0A+%25253E%0A  int:%0A-%250A%0A+%25250A%0A     %0A@@ -192,18 +192,22 @@%0A lf.phone%0A-%250A%250A%0A+%25250A%25250A%0A     def %0A@@ -232,17 +232,19 @@%0A e: int):%0A-%250A%0A+%25250A%0A         %0A@@ -260,22 +260,26 @@%0A e = fone%0A-%250A%0A+%25250A%0A     %0A-%250A%0A+%25250A%0A     def %0A@@ -283,39 +283,43 @@%0A ef getId(self) -%0A-%253E%0A+%25253E%0A  str:%0A-%250A%0A+%25250A%0A         return s%0A@@ -324,22 +324,26 @@%0A  self.id%0A-%250A%0A+%25250A%0A     %0A-%250A%0A+%25250A%0A     def %0A@@ -355,33 +355,35 @@%0A (self, id: str):%0A-%250A%0A+%25250A%0A         self.id %0A@@ -386,18 +386,22 @@%0A .id = id%0A-%250A%250A%0A+%25250A%25250A%0A     def %0A@@ -408,39 +408,43 @@%0A toString(self) -%0A-%253E%0A+%25253E%0A  str:%0A-%250A%0A+%25250A%0A         return f%0A@@ -447,21 +447,29 @@%0A rn f%0A-%2522%257B%0A+%252522%25257B%0A self.id%0A-%257D, %257B%0A+%25257D, %25257B%0A self%0A@@ -478,17 +478,27 @@%0A hone%0A-%257D%2522%250A    %250A%250A%0A+%25257D%252522%25250A    %25250A%25250A%0A clas%0A@@ -507,17 +507,19 @@%0A Theater:%0A-%250A%0A+%25250A%0A     def %0A@@ -568,17 +568,19 @@%0A nstrutor%0A-%250A%0A+%25250A%0A         %0A@@ -603,17 +603,19 @@%0A capacity%0A-%250A%0A+%25250A%0A         %0A@@ -634,32 +634,42 @@%0A list%0A-%255B%0A+%25255B%0A Client %0A-%257C%0A+%25257C%0A  None%0A-%255D = %255B%0A+%25255D = %25255B%0A None%0A-%255D%0A+%25255D%0A  * c%0A@@ -675,18 +675,22 @@%0A capacity%0A-%250A%250A%0A+%25250A%25250A%0A     def %0A@@ -709,25 +709,27 @@%0A  name: str):%0A-%250A%0A+%25250A%0A         for %0A@@ -786,10 +786,20 @@%0A posi%0A-%25C3%25A7%25C3%25A3%0A+%2525C3%2525A7%2525C3%2525A3%0A o da%0A@@ -813,17 +813,19 @@%0A usando i%0A-%250A%0A+%25250A%0A         %0A@@ -851,11 +851,15 @@%0A eats%0A-%255Bi%255D%0A+%25255Bi%25255D%0A     %0A@@ -881,9 +881,14 @@%0A onte%0A-%25C3%25BA%0A+%2525C3%2525BA%0A do d%0A@@ -917,17 +917,19 @@%0A o client%0A-%250A%0A+%25250A%0A         %0A@@ -1034,9 +1034,14 @@%0A  id %0A-%25C3%25A9%0A+%2525C3%2525A9%0A  igu%0A@@ -1050,17 +1050,19 @@%0A  ao name%0A-%250A%0A+%25250A%0A         %0A@@ -1109,17 +1109,19 @@%0A orna o i%0A-%250A%0A+%25250A%0A         %0A@@ -1131,22 +1131,26 @@%0A urn None%0A-%250A%0A+%25250A%0A     %0A-%250A%0A+%25250A%0A     def %0A@@ -1176,32 +1176,36 @@%0A ndex: int) -%0A-%253E%0A+%25253E%0A  bool:%0A-%250A%0A+%25250A%0A         retu%0A@@ -1213,17 +1213,19 @@%0A n 0 %0A-%253C%0A+%25253C%0A = index %0A %253C le%0A@@ -1224,9 +1224,11 @@%0A dex %0A-%253C%0A+%25253C%0A  len%0A@@ -1262,17 +1262,22 @@%0A  index t%0A-%25C3%25A1%0A+%2525C3%2525A1%0A  entre 0%0A@@ -1295,17 +1295,22 @@%0A  index v%0A-%25C3%25A1%0A+%2525C3%2525A1%0A lido (ch%0A@@ -1316,22 +1316,26 @@%0A hecagem)%0A-%250A%0A+%25250A%0A     %0A-%250A%0A+%25250A%0A     def %0A@@ -1386,16 +1386,20 @@%0A t) -%0A-%253E%0A+%25253E%0A  bool:%0A-%250A%0A+%25250A%0A     %0A@@ -1444,25 +1444,30 @@%0A           #v%0A-%25C3%25AA%0A+%2525C3%2525AA%0A  se a cadeir%0A@@ -1474,17 +1474,19 @@%0A a existe%0A-%250A%0A+%25250A%0A         %0A@@ -1487,33 +1487,35 @@%0A           print(%0A-%2522%0A+%252522%0A fail: cadeira na%0A@@ -1522,19 +1522,23 @@%0A o existe%0A-%2522)%250A%0A+%252522)%25250A%0A         %0A@@ -1549,33 +1549,35 @@%0A return False%0A-%250A%0A+%25250A%0A         %0A %250A        if %0A@@ -1556,33 +1556,35 @@%0A False%25250A        %0A-%250A%0A+%25250A%0A         if self.%0A@@ -1588,23 +1588,27 @@%0A lf.seats%0A-%255B%0A+%25255B%0A index%0A-%255D%0A+%25255D%0A  is not %0A@@ -1604,33 +1604,35 @@%0A %25255D is not None:%0A-%250A%0A+%25250A%0A             prin%0A@@ -1629,25 +1629,27 @@%0A       print(%0A-%2522%0A+%252522%0A fail: cadeir%0A@@ -1661,17 +1661,24 @@%0A pada%0A-%2522%0A+%252522%0A )    #v%0A-%25C3%25AA%0A+%2525C3%2525AA%0A  se %0A@@ -1692,17 +1692,22 @@%0A ra t%0A-%25C3%25A1%0A+%2525C3%2525A1%0A  ocupada%0A %250A   %0A@@ -1702,17 +1702,19 @@%0A  ocupada%0A-%250A%0A+%25250A%0A         %0A@@ -1725,33 +1725,35 @@%0A return False%0A-%250A%0A+%25250A%0A         %0A %250A        if %0A@@ -1732,33 +1732,35 @@%0A False%25250A        %0A-%250A%0A+%25250A%0A         if self.%0A@@ -1778,25 +1778,27 @@%0A is not None:%0A-%250A%0A+%25250A%0A             %0A@@ -1803,17 +1803,19 @@%0A   print(%0A-%2522%0A+%252522%0A fail: cl%0A@@ -1849,16 +1849,23 @@%0A nema%0A-%2522%0A+%252522%0A )   #v%0A-%25C3%25AA%0A+%2525C3%2525AA%0A  se %0A@@ -1879,14 +1879,24 @@%0A te j%0A-%25C3%25A1 est%25C3%25A1%0A+%2525C3%2525A1 est%2525C3%2525A1%0A  pre%0A@@ -1908,17 +1908,19 @@%0A  na sala%0A-%250A%0A+%25250A%0A         %0A@@ -1935,25 +1935,27 @@%0A rn False%0A-%250A%0A+%25250A%0A         %0A %250A       %0A@@ -1938,33 +1938,35 @@%0A False%25250A        %0A-%250A%0A+%25250A%0A         self.sea%0A@@ -1967,23 +1967,27 @@%0A lf.seats%0A-%255B%0A+%25255B%0A index%0A-%255D%0A+%25255D%0A  = Clien%0A@@ -2015,17 +2015,19 @@%0A  reserva%0A-%250A%0A+%25250A%0A         %0A@@ -2037,22 +2037,26 @@%0A urn True%0A-%250A%0A+%25250A%0A     %0A-%250A%0A+%25250A%0A     def %0A@@ -2077,17 +2077,19 @@%0A d: str):%0A-%250A%0A+%25250A%0A         %0A@@ -2111,18 +2111,22 @@%0A arch(id)%0A-%250A%250A%0A+%25250A%25250A%0A         %0A@@ -2134,33 +2134,35 @@%0A f index is None:%0A-%250A%0A+%25250A%0A             prin%0A@@ -2164,17 +2164,19 @@%0A  print(f%0A-%2522%0A+%252522%0A fail: cl%0A@@ -2185,20 +2185,24 @@%0A nte %0A-%257Bid%257D%0A+%25257Bid%25257D%0A  nao est%0A %25C3%25A1 na%0A@@ -2201,9 +2201,14 @@%0A  est%0A-%25C3%25A1%0A+%2525C3%2525A1%0A  na %0A@@ -2221,19 +2221,23 @@%0A e cinema%0A-%2522)%250A%0A+%252522)%25250A%0A         %0A@@ -2246,25 +2246,27 @@%0A   return%0A-%250A%0A+%25250A%0A         %0A %250A       %0A@@ -2253,25 +2253,27 @@%0A n%25250A        %0A-%250A%0A+%25250A%0A         self%0A@@ -2282,120 +2282,263 @@%0A eats%0A-%255B%0A+%25255B%0A index%0A-%255D%0A+%25255D%0A  = None%0A-%250A%250A    def getSeats(self):%250A        self.seats: list%255BClient %257C None%255D %250A        return self.seats%250A%0A+%25250A%25250A    %250A+@@ -2030,90 +2030,4 @@%25250A     %25250A-%250A def %250A@@ -42,17 +42,19 @@%250A s(self):%250A-%25250A%250A+%2525250A%250A         %250A@@ -73,25 +73,33 @@%250A list%250A-%25255B%250A+%2525255B%250A Client %250A-%25257C%250A+%2525257C%250A  None%250A-%25255D %25250A%250A+%2525255D %2525250A%250A     %250A@@ -124,289 +124,4 @@%250A ats%25250A%250A-%0A     %0A-%250A%0A+%25250A%0A     %0A@@ -2561,15 +2561,19 @@%0A f) -%0A-%253E%0A+%25253E%0A  str:%0A-%250A%0A+%25250A%0A     %0A@@ -2585,25 +2585,20 @@%0A ista%0A-: list%255Bstr%255D = %255B%255D%250A%0A+ = %25255B%25255D%25250A%0A     %0A@@ -2626,17 +2626,19 @@%0A f.seats:%0A-%250A%0A+%25250A%0A         %0A@@ -2659,17 +2659,19 @@%0A is None:%0A-%250A%0A+%25250A%0A         %0A@@ -2695,13 +2695,19 @@%0A end(%0A-%2522-%2522)%250A%0A+%252522-%252522)%25250A%0A     %0A@@ -2719,17 +2719,19 @@%0A    else:%0A-%250A%0A+%25250A%0A         %0A@@ -2763,18 +2763,22 @@%0A client))%0A-%250A%250A%0A+%25250A%25250A%0A         %0A@@ -2791,12 +2791,16 @@%0A r = %0A-%2522, %2522%0A+%252522, %252522%0A .joi%0A@@ -2807,17 +2807,19 @@%0A n(lista)%0A-%250A%0A+%25250A%0A         %0A@@ -2829,11 +2829,17 @@%0A urn %0A-%2522%255B%2522%0A+%252522%25255B%252522%0A  + m%0A@@ -2851,518 +2851,17 @@%0A r + %0A-%2522%255D%2522%250A%250Adef main():%250A    theater = Theater()%250A%250A    while True: %250A        line = input()%250A        args = line.split(%2522 %2522)%250A        print(f%2522$%257Bline%257D%2522)%250A%250A        if args%255B0%255D == %2522end%2522:%250A            break%250A%250A        elif args%255B0%255D == %2522init%2522:%250A            theater = Theater(int(args%255B1%255D))%250A%250A        elif args%255B0%255D == %2522show%2522:%250A            print(theater)%250A%250A        elif args%255B0%255D == %2522reserve%2522:%250A            theater.reserve(args%255B1%255D, int(args%255B2%255D), int(args%255B3%255D))%250A%250A        elif args%255B0%255D == %2522cancel%2522:%250A            theather.cancel(args%255B1%255D)%250A%250Amain()%250A        %0A+%252522%25255D%252522%25250A%0A %250A\n %0A\n",
+            "lines": "486"
+        },
+        {
+            "label": "2025-11-19_13-18-29",
+            "content": "@@ -2444,17 +2444,16 @@\n Theater(\n-0\n )%0A%0A    w\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_13-18-52",
+            "content": "@@ -390,17 +390,18 @@\n self.id%7D\n-:\n+, \n %7Bself.ph\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-43-37",
+            "content": "@@ -2731,19 +2731,8 @@\n ater\n-.toString()\n )%0A%0A \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-44-40",
+            "content": "@@ -2397,14 +2397,8 @@\n %5B%22 +\n- %22,%22 +\n  mos\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-46-36",
+            "content": "@@ -2393,16 +2393,22 @@\n rn %22%5B%22 +\n+ %22,%22 +\n  mostrar\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-46-50",
+            "content": "@@ -2358,16 +2358,17 @@\n rar = %22,\n+ \n %22.join(l\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-46-51",
+            "content": "@@ -2274,17 +2274,16 @@\n ppend(%22-\n-,\n %22)%0A     \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-47-02",
+            "content": "@@ -2275,17 +2275,16 @@\n pend(%22-,\n- \n %22)%0A     \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-47-08",
+            "content": "@@ -2274,16 +2274,18 @@\n ppend(%22-\n+, \n %22)%0A     \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-47-20",
+            "content": "@@ -2357,17 +2357,17 @@\n trar = %22\n- \n+,\n %22.join(l\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-49-03",
+            "content": "@@ -391,21 +391,18 @@\n elf.\n-phone\n+id\n %7D:%7Bself.\n id%7D%22\n@@ -397,18 +397,21 @@\n %7D:%7Bself.\n-id\n+phone\n %7D%22%0A    %0A\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-52-00",
+            "content": "@@ -391,18 +391,21 @@\n elf.\n-id\n+phone\n %7D:%7Bself.\n phon\n@@ -400,21 +400,18 @@\n %7D:%7Bself.\n-phone\n+id\n %7D%22%0A    %0A\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-52-13",
+            "content": "@@ -182,18 +182,17 @@\n e(self, \n-ph\n+f\n one: int\n@@ -211,26 +211,25 @@\n elf.phone = \n-ph\n+f\n one%0A    %0A   \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-55-13",
+            "content": "@@ -347,21 +347,29 @@\n def \n-__str__(self)\n+toString(self) -%3E str\n :%0A  \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-19_23-59-34",
+            "content": "@@ -1453,24 +1453,16 @@\n cadeira \n-ja esta \n ocupada%22\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-20_00-00-06",
+            "content": "@@ -1618,17 +1618,25 @@\n a esta n\n-o\n+a sala de\n  cinema%22\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-20_00-00-29",
+            "content": "@@ -1918,16 +1918,21 @@\n  cliente\n+ %7Bid%7D\n  nao est\n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-20_00-00-51",
+            "content": "@@ -1922,28 +1922,36 @@\n ente nao est\n-a no\n+%C3%A1 na sala de\n  cinema%22)%0A  \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-11-20_00-01-10",
+            "content": "class Client:\n    def __init__(self, id: str, phone: int):\n        self.id = id\n        self.phone = phone\n\n    def getPhone(self) -> int:\n        return self.phone\n\n    def setPhone(self, phone: int):\n        self.phone = phone\n    \n    def getId(self) -> str:\n        return self.id\n    \n    def setId(self, id: str):\n        self.id = id\n\n    def __str__(self):\n        return f\"{self.id}:{self.phone}\"\n    \n\nclass Theater:\n    def __init__(self, capacity: int):        # construtor\n        self.capacity = capacity\n        self.seats: list[Client | None] = [None] * capacity\n\n    def search(self, name: str):\n        for i in range(len(self.seats)):    #vai acessar cada posi\u00e7\u00e3o da lista usando i\n            client = self.seats[i]          #pega o conte\u00fado da cadeira i e guarda no client\n            if client is not None and client.getId() == name:      #ver se a cadeira tem um cliente e se o id \u00e9 igual ao name\n                return i                    #retorna o i\n        return None\n    \n    def verifyIndex(self, index: int) -> bool:\n        return 0 <= index < len(self.seats) #garante que o index t\u00e1 entre 0 e o ultimo index v\u00e1lido (checagem)\n    \n    def reserve(self, id: str, phone: int, index: int) -> bool:\n        if not self.verifyIndex(index):             #v\u00ea se a cadeira existe\n            print(\"fail: cadeira nao existe\")\n            return False\n        \n        if self.seats[index] is not None:\n            print(\"fail: cadeira ja esta ocupada\")    #v\u00ea se a cadeira t\u00e1 ocupada\n            return False\n        \n        if self.search(id) is not None:\n            print(\"fail: cliente ja esta no cinema\")   #v\u00ea se o cliente j\u00e1 est\u00e1 presente na sala\n            return False\n        \n        self.seats[index] = Client(id, phone)  # faz a reserva\n        return True\n    \n    def cancel(self, id: str):\n        index = self.search(id)\n\n        if index is None:\n            print(f\"fail: cliente nao esta no cinema\")\n            return\n        \n        self.seats[index] = None\n\n    def getSeats(self):\n        self.seats: list[Client | None] \n        return self.seats\n    \n    def toString(self) -> str:\n        lista: list[str] = []\n        for client in self.seats:\n            if client is None:\n                lista.append(\"-\")\n            else:\n                lista.append(str(client))\n\n        mostrar = \" \".join(lista)\n        return \"[\" + mostrar + \"]\"\n\ndef main():\n    theater = Theater(0)\n\n    while True: \n        line = input()\n        args = line.split(\" \")\n        print(f\"${line}\")\n\n        if args[0] == \"end\":\n            break\n\n        elif args[0] == \"init\":\n            theater = Theater(int(args[1]))\n\n        elif args[0] == \"show\":\n            print(theater.toString())\n\n        elif args[0] == \"reserve\":\n            theater.reserve(args[1], int(args[2]), int(args[3]))\n\n        elif args[0] == \"cancel\":\n            theater.cancel(args[1])\n\nmain()\n        \n",
+            "lines": "101"
         }
     ]
 }

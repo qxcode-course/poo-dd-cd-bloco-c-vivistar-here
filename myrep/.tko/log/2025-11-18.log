@@ -129,3 +129,24 @@
 2025-11-18 23:05:36, MOVE, v:1, k:poo@pula-pula, mode:PICK
 2025-11-18 23:05:37, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100
 2025-11-18 23:05:37, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100
+2025-11-18 23:09:06, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100, size:117
+2025-11-18 23:09:17, EXEC, v:1, k:poo@pula-pula, mode:FULL, rate:100
+2025-11-18 23:09:18, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-18 23:09:24, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-18 23:09:25, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0
+2025-11-18 23:11:42, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-18 23:12:56, MOVE, v:1, k:poo@pula-pula, mode:PICK
+2025-11-18 23:12:57, MOVE, v:1, k:poo@pula-pula, mode:BACK
+2025-11-18 23:14:16, SELF, v:1, k:poo@pula-pula, rate:100, human:amiga, other:estudos_e_exercicio, alone:9, study:460
+2025-11-18 23:16:08, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-18 23:16:09, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0
+2025-11-18 23:30:00, EXEC, v:1, k:poo@cinema, mode:FREE, size:25
+2025-11-18 23:38:47, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:32
+2025-11-18 23:38:48, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0
+2025-11-18 23:38:51, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-18 23:46:41, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-18 23:46:43, MOVE, v:1, k:poo@cinema, mode:BACK
+2025-11-18 23:46:48, MOVE, v:1, k:poo@cinema, mode:PICK
+2025-11-18 23:46:48, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:38
+2025-11-18 23:46:48, EXEC, v:1, k:poo@cinema, mode:FULL, rate:0, size:38
+2025-11-18 23:46:49, MOVE, v:1, k:poo@cinema, mode:BACK
