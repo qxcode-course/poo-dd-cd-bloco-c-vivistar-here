@@ -6,8 +6,8 @@ class Client:
     def getPhone(self) -> int:
         return self.phone
 
-    def setPhone(self, fone: int):
-        self.phone = fone
+    def setPhone(self, phone: int):
+        self.phone = phone
     
     def getId(self) -> str:
         return self.id
@@ -15,8 +15,8 @@ class Client:
     def setId(self, id: str):
         self.id = id
 
-    def toString(self) -> str:
-        return f"{self.id}, {self.phone}"
+    def __str__(self):
+        return f"{self.id}:{self.phone}"
     
 
 class Theater:
@@ -40,11 +40,11 @@ class Theater:
             return False
         
         if self.seats[index] is not None:
-            print("fail: cadeira ocupada")    #vê se a cadeira tá ocupada
+            print("fail: cadeira ja esta ocupada")    #vê se a cadeira tá ocupada
             return False
         
         if self.search(id) is not None:
-            print("fail: cliente ja esta na sala de cinema")   #vê se o cliente já está presente na sala
+            print("fail: cliente ja esta no cinema")   #vê se o cliente já está presente na sala
             return False
         
         self.seats[index] = Client(id, phone)  # faz a reserva
@@ -54,7 +54,7 @@ class Theater:
         index = self.search(id)
 
         if index is None:
-            print(f"fail: cliente {id} nao está na sala de cinema")
+            print(f"fail: cliente nao esta no cinema")
             return
         
         self.seats[index] = None
@@ -71,7 +71,7 @@ class Theater:
             else:
                 lista.append(str(client))
 
-        mostrar = ", ".join(lista)
+        mostrar = " ".join(lista)
         return "[" + mostrar + "]"
 
 def main():
@@ -89,7 +89,7 @@ def main():
             theater = Theater(int(args[1]))
 
         elif args[0] == "show":
-            print(theater)
+            print(theater.toString())
 
         elif args[0] == "reserve":
             theater.reserve(args[1], int(args[2]), int(args[3]))
