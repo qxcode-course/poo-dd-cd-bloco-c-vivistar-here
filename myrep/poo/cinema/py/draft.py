@@ -28,7 +28,7 @@ class Theater:
             client = self.seats[i]
             if client is not None and client.getId() == name:
                 return i
-            return None
+        return None
         
     def verifyIndex(self, index: int) -> bool:
         return 0 <= index < len(self.seats)
@@ -38,7 +38,8 @@ class Theater:
             print("fail: cadeira nao existe")
             return False
         if self.seats[index] is not None:
-            print("fail: cadeira ocupada")
+            print("fail: cadeira ja esta ocupada")
+            return False
         if self.search(id) is not None:
             print("fail: cliente ja esta no cinema")
             return False
@@ -89,4 +90,4 @@ def main():
         elif args[0] == "cancel":
             theater.cancel(args[1])
 
-    main()
+main()
